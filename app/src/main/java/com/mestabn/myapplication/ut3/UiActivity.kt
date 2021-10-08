@@ -1,10 +1,10 @@
-package com.mestabn.myapplication
+package com.mestabn.myapplication.ut3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.ContextCompat
+import com.mestabn.myapplication.R
 
 class UiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
