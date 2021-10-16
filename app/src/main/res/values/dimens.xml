@@ -7,6 +7,8 @@
     <!-- Tamaño imagenes -->
     <dimen name="image_height">100dp</dimen>
     <dimen name="image_width">60dp</dimen>
+    <dimen name="image2_height">150dp</dimen>
+    <dimen name="image2_width">100dp</dimen>
 
 
     <!-- Tamaños en sp -->
@@ -23,7 +25,11 @@
     <dimen name="icon_nav_height">40dp</dimen>
 
     <!-- Espacio entre los iconos de navegacion-->
-    <dimen name="icon_nav_space">40dp</dimen>
+    <dimen name="icon_nav_space">30dp</dimen>
+
+    <!-- Espacio entre imagenes Net2-->
+    <dimen name="image_left_margin">10dp</dimen>
+
 
 
 

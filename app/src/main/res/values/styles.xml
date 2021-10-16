@@ -13,7 +13,7 @@
         <item name="android:layout_height">@dimen/thumbnails_height</item>
     </style>
 
-    <!-- Estilo para el texto de los títulos de las películas/series -->
+    <!-- Estilo para el texto de los títulos -->
     <style name="TitleView">
         <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/white</item>
@@ -36,7 +36,13 @@
         <item name="android:layout_width">@dimen/icon_nav_width</item>
         <item name="android:layout_height">@dimen/icon_nav_height</item>
         <item name="android:layout_marginStart">@dimen/icon_nav_space</item>
+    </style>
 
+    <!-- Estilo imagenes netf2 -->
+    <style name="FilmView">
+        <item name="android:layout_width">@dimen/image2_width</item>
+        <item name="android:layout_height">@dimen/image2_height</item>
+        <item name="android:layout_marginLeft">@dimen/image_left_margin</item>
     </style>
 
 
