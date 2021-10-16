@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey_100">
+
+    <!-- Cabecera, LinearLayout horizontal -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal">
+
+        <!-- Icono de exclamación -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image00"
+            style="@style/UserAvatarView"
+            android:layout_alignParentStart="true"
+            tools:src="@drawable/ic_exclamation" />
+
+        <!-- Texto de la cabecera -->
+        <TextView
+            style="@style/DescriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/image00"
+            android:gravity="center"
+            tools:text="@string/head_text" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--Parte que implementa los usuarios con cada una de sus descargas
+     LinearLayout vertical-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearlayout1"
+        android:orientation="vertical">
+
+        <!-- Usuario 1 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image01"
+                style="@style/UserAvatarView"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/user01"
+                style="@style/DescriptionView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/image01"
+                tools:text="@string/user1_name" />
+
+        </RelativeLayout>
+
+        <!-- Primera descarga del usuario 1 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image02"
+                style="@style/AvatarView"
+                tools:src="@tools:sample/avatars" />
+
+            <!-- Creo el LinearLayout para poder centrar los textos a la imagen -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/image02"
+                android:orientation="vertical"
+                tools:ignore="RelativeOverlap">
+
+                <TextView
+                    android:id="@+id/title1"
+                    style="@style/TitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/title1_name" />
+
+                <TextView
+                    style="@style/DescriptionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/description01" />
+
+            </LinearLayout>
+
+            <!-- Icono de flecha de avanzar-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/ic_right_arrow" />
+
+        </RelativeLayout>
+
+        <!-- Segunda descarga del usuario 1 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image03"
+                style="@style/AvatarView"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/image03"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title3"
+                    style="@style/TitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/title2_name" />
+
+                <TextView
+                    style="@style/DescriptionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/description02" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/arrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/ic_right_arrow" />
+
+        </RelativeLayout>
+
+        <!-- Usuario 2 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image04"
+                style="@style/UserAvatarView"
+                android:layout_alignParentStart="true"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/user02"
+                style="@style/DescriptionView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/image04"
+                tools:text="@string/user2_name" />
+
+        </RelativeLayout>
+
+        <!-- Descarga del usuario 2 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image05"
+                style="@style/AvatarView"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/image05"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title2"
+                    style="@style/TitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/title3_name" />
+
+                <TextView
+                    style="@style/DescriptionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/description03" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/IconsView"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/ic_downloads_package" />
+
+        </RelativeLayout>
+
+        <!-- Usuario 3 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image06"
+                style="@style/UserAvatarView"
+                android:layout_alignParentStart="true"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/user03"
+                style="@style/DescriptionView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/image06"
+                tools:text="@string/user3_name" />
+
+        </RelativeLayout>
+
+        <!-- Descarga del usuario 3 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image07"
+                style="@style/AvatarView"
+                tools:src="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/image07"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title4"
+                    style="@style/TitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/title4_name" />
+
+                <TextView
+                    style="@style/DescriptionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/description04" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/IconsView"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                tools:src="@drawable/ic_check" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- Pie de la vista con los iconos, LinearLayout horizontal-->
+    <LinearLayout
+        android:id="@+id/linearlayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/ic_home" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/search"
+            style="@style/IconNavBar"
+            tools:src="@drawable/ic_search" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/next"
+            style="@style/IconNavBar"
+            tools:src="@drawable/ic_play" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dwonloads"
+            style="@style/IconNavBar"
+            tools:src="@drawable/ic_download" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/IconNavBar"
+            tools:src="@drawable/ic_menu" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
