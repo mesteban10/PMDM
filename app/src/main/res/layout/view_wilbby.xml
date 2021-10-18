@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relative01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/burguer">
+
+        <TextView
+            android:id="@+id/text01"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_corner1"
+            android:textColor="@color/white"
+            tools:text="Oferta" />
+
+    <RelativeLayout
+        android:id="@+id/relative02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+            <TextView
+                android:id="@+id/text02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                tools:text="Golden Rock and Beer" />
+
+            <TextView
+                android:id="@+id/text03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/black_53"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_below="@id/text02"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                tools:text="Hamburguesas" />
+
+
+
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/rounded_corner2"
+            app:drawableLeftCompat="@drawable/ic_clock"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/relative02"
+            tools:text="20-30'" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative01"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true">
+
+
+        <ImageView
+            android:id="@+id/text05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/rounded_corner3"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_like_heart" />
+
+        <TextView
+            android:id="@+id/text06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/text05"
+            android:background="@drawable/rounded_corner4"
+            android:textColor="@color/white"
+            tools:text="Nuevo" />
+
+
+        <TextView
+            android:id="@+id/text07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/rounded_corner3"
+            android:gravity="center"
+            app:drawableLeftCompat="@drawable/ic_delivery"
+            tools:text="1.99 €" />
+
+        <TextView
+            android:id="@+id/text08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/text07"
+            android:background="@drawable/rounded_corner3"
+            android:gravity="center"
+            app:drawableLeftCompat="@drawable/ic_star"
+            android:layout_centerInParent="true"
+            tools:text="0.0" />
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
