@@ -1,4 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">PMPD-PlayGround</string>
     <string name="name_image">Nombre de la imagen</string>
+    <string name="offer_name">Oferta</string>
+    <string name="restaurant_name">Golden Rock and Beer</string>
+    <string name="food_name">Hamburguesas</string>
+    <string name="delivery_time">20-30\'</string>
+    <string name="new_restaurant">Nuevo</string>
+    <string name="delivery_price">1.99 €</string>
+    <string name="punctuation_restaurant">0.0</string>
 </resources>

@@ -7,119 +7,112 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/relative01"
+        android:id="@+id/principal_view_bg_image"
+        style="@style/principal_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:background="@drawable/burguer">
 
         <TextView
-            android:id="@+id/text01"
-            android:layout_width="80dp"
+            android:id="@+id/text_offer"
+            style="@style/offer_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:background="@drawable/rounded_corner1"
-            android:textColor="@color/white"
-            tools:text="Oferta" />
+            android:background="@drawable/rounded_corner_bg_yellow"
+            tools:text="@string/offer_name" />
 
-    <RelativeLayout
-        android:id="@+id/relative02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        >
+        <RelativeLayout
+            android:id="@+id/restaurant_name_and_type_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
 
             <TextView
-                android:id="@+id/text02"
+                android:id="@+id/restaurant_name_text"
+                style="@style/name_restaurant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                tools:text="Golden Rock and Beer" />
+                android:shadowRadius="10.2"
+                tools:text="@string/restaurant_name" />
 
             <TextView
-                android:id="@+id/text03"
+                android:id="@+id/type_food"
+                style="@style/food_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/restaurant_name_text"
+                android:layout_centerInParent="true"
                 android:background="@color/black_53"
-                android:textSize="12sp"
-                android:textColor="@color/white"
-                android:layout_below="@id/text02"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                tools:text="Hamburguesas" />
+                tools:text="@string/food_name" />
 
-
-
-    </RelativeLayout>
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/text04"
+            android:id="@+id/time_delivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/rounded_corner2"
-            app:drawableLeftCompat="@drawable/ic_clock"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/relative02"
-            tools:text="20-30'" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_bg_black"
+            android:padding="6dp"
+            app:drawableLeftCompat="@drawable/ic_clock"
+            tools:text="@string/delivery_time" />
     </RelativeLayout>
 
-
     <RelativeLayout
+        style="@style/foot_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/relative01"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/principal_view_bg_image"
         android:layout_alignParentStart="true">
 
-
         <ImageView
-            android:id="@+id/text05"
+            android:id="@+id/like_icon"
+            style="@style/like_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/rounded_corner3"
-            android:gravity="center"
-            android:layout_marginEnd="10dp"
             android:layout_centerInParent="true"
+            android:background="@drawable/circle_shape"
+            android:gravity="center"
             android:src="@drawable/ic_like_heart" />
 
         <TextView
-            android:id="@+id/text06"
+            android:id="@+id/description_restaurant"
+            style="@style/nuevo_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_toEndOf="@id/text05"
-            android:background="@drawable/rounded_corner4"
-            android:textColor="@color/white"
-            tools:text="Nuevo" />
-
+            android:layout_toEndOf="@id/like_icon"
+            android:background="@drawable/rounded_corner_bg_purple"
+            tools:text="@string/new_restaurant" />
 
         <TextView
-            android:id="@+id/text07"
+            android:id="@+id/price_delivery"
+            style="@style/rounded_figure_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/rounded_corner3"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_shadow"
             android:gravity="center"
             app:drawableLeftCompat="@drawable/ic_delivery"
-            tools:text="1.99 €" />
+            tools:text="@string/delivery_price" />
 
         <TextView
-            android:id="@+id/text08"
+            android:id="@+id/restaurant_punctuation"
+            style="@style/rounded_figure_delivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/text07"
-            android:background="@drawable/rounded_corner3"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/price_delivery"
+            android:background="@drawable/rounded_corner_shadow"
             android:gravity="center"
             app:drawableLeftCompat="@drawable/ic_star"
-            android:layout_centerInParent="true"
-            tools:text="0.0" />
+            tools:text="@string/punctuation_restaurant" />
+
     </RelativeLayout>
 
 

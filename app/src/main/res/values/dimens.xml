@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tamaño del texto -->
+    <dimen name="text_size_big">28sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <!-- Dimensiones layout ppal-->
+    <dimen name="image_height">180dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="margin_end">10dp</dimen>
+    <dimen name="margin_start">10dp</dimen>
+
+    <!-- Dimensiones offer_text-->
+    <dimen name="margin_start_offer">6dp</dimen>
+    <dimen name="margin_top_offer">6dp</dimen>
+    <dimen name="padding_left_offer">20dp</dimen>
+    <dimen name="padding_right_offer">20dp</dimen>
+
+    <dimen name="padding_general">4dp</dimen>
+
+    <dimen name="padding_review">6dp</dimen>
+
+
+
+
+</resources>
