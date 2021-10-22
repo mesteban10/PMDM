@@ -25,6 +25,8 @@
     <!-- Espacio entre los iconos de navegacion-->
     <dimen name="icon_nav_space">40dp</dimen>
 
+    <dimen name="margin_start_autodescargas">10dp</dimen>
+
 
 
 

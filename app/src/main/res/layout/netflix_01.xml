@@ -7,7 +7,7 @@
 
     <!-- Cabecera, LinearLayout horizontal -->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearlayout1"
+        android:id="@+id/header_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
@@ -15,7 +15,7 @@
 
         <!-- Icono de exclamación -->
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image00"
+            android:id="@+id/exclamation_image"
             style="@style/UserAvatarView"
             android:layout_alignParentStart="true"
             tools:src="@drawable/ic_exclamation" />
@@ -25,8 +25,7 @@
             style="@style/DescriptionView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/image00"
+            android:layout_toEndOf="@+id/exclamation_image"
             android:gravity="center"
             tools:text="@string/head_text" />
 
@@ -35,10 +34,10 @@
     <!--Parte que implementa los usuarios con cada una de sus descargas
      LinearLayout vertical-->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearlayout2"
+        android:id="@+id/content_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/linearlayout1"
+        android:layout_below="@id/header_view"
         android:orientation="vertical">
 
         <!-- Usuario 1 -->
@@ -47,17 +46,17 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image01"
+                android:id="@+id/user_image_01"
                 style="@style/UserAvatarView"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/user01"
+                android:id="@+id/user_01"
                 style="@style/DescriptionView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/image01"
+                android:layout_toEndOf="@+id/user_image_01"
                 tools:text="@string/user1_name" />
 
         </RelativeLayout>
@@ -68,7 +67,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image02"
+                android:id="@+id/movie_1_user_01"
                 style="@style/AvatarView"
                 tools:src="@tools:sample/avatars" />
 
@@ -77,12 +76,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/image02"
+                android:layout_toEndOf="@id/movie_1_user_01"
                 android:orientation="vertical"
                 tools:ignore="RelativeOverlap">
 
                 <TextView
-                    android:id="@+id/title1"
+                    android:id="@+id/title_movie_1_user_1"
                     style="@style/TitleView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -113,7 +112,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image03"
+                android:id="@+id/movie_2_user_01"
                 style="@style/AvatarView"
                 tools:src="@tools:sample/avatars" />
 
@@ -121,11 +120,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/image03"
+                android:layout_toEndOf="@id/movie_2_user_01"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title3"
+                    android:id="@+id/title_movie_2_user_1"
                     style="@style/TitleView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,7 +139,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/arrow2"
+                android:id="@+id/arrow_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -155,7 +154,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image04"
+                android:id="@+id/image_user_02"
                 style="@style/UserAvatarView"
                 android:layout_alignParentStart="true"
                 tools:src="@tools:sample/avatars" />
@@ -166,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/image04"
+                android:layout_toEndOf="@+id/image_user_02"
                 tools:text="@string/user2_name" />
 
         </RelativeLayout>
@@ -177,7 +176,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image05"
+                android:id="@+id/movie_user_02"
                 style="@style/AvatarView"
                 tools:src="@tools:sample/avatars" />
 
@@ -185,11 +184,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/image05"
+                android:layout_toEndOf="@id/movie_user_02"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title2"
+                    android:id="@+id/title_movie_user_02"
                     style="@style/TitleView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,7 +203,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                style="@style/IconsView"
+                style="@style/Downloading_icon_view"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
                 tools:src="@drawable/ic_downloads_package" />
@@ -217,7 +216,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image06"
+                android:id="@+id/image_user_03"
                 style="@style/UserAvatarView"
                 android:layout_alignParentStart="true"
                 tools:src="@tools:sample/avatars" />
@@ -228,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/image06"
+                android:layout_toEndOf="@+id/image_user_03"
                 tools:text="@string/user3_name" />
 
         </RelativeLayout>
@@ -239,7 +238,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image07"
+                android:id="@+id/movie_user_03"
                 style="@style/AvatarView"
                 tools:src="@tools:sample/avatars" />
 
@@ -247,11 +246,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/image07"
+                android:layout_toEndOf="@id/movie_user_03"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title4"
+                    android:id="@+id/title_movie_user_03"
                     style="@style/TitleView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -266,7 +265,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                style="@style/IconsView"
+                style="@style/Download_icon_view"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
                 tools:src="@drawable/ic_check" />
@@ -278,7 +277,7 @@
 
     <!-- Pie de la vista con los iconos, LinearLayout horizontal-->
     <LinearLayout
-        android:id="@+id/linearlayout3"
+        android:id="@+id/footer_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -302,7 +301,7 @@
             tools:src="@drawable/ic_play" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/dwonloads"
+            android:id="@+id/downloads"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_download" />
 
