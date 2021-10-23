@@ -39,10 +39,11 @@
         android:id="@+id/text03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/image01"
         android:layout_below="@+id/text02"
-        tools:text="@tools:sample/lorem/random"
-        tools:src="@tools:sample/avatars" />
+        android:layout_toEndOf="@+id/image01"
+        tools:src="@tools:sample/avatars"
+        android:maxLines="5"
+        tools:text="@tools:sample/lorem/random" />
 
     <LinearLayout
         android:layout_width="match_parent"
