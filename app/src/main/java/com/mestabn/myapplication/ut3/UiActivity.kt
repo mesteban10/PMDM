@@ -10,7 +10,7 @@ class UiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("@dev", "onCreate")
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_ui)
 
         //Declaro variable de tipo inmutable del tipo AppCompatImageView y la inicializo buscando la imagen en el activity_main.xml
         val imageLion : AppCompatImageView = findViewById(R.id.lion_image) //Busco en la vista del Main y lo guardo en variable
@@ -20,7 +20,7 @@ class UiActivity : AppCompatActivity() {
          imageLion.setImageResource(R.drawable.lion_image)
 
     }
-
+    
    override fun onStart(){
         super.onStart()
         Log.d("@dev", "onStart")
