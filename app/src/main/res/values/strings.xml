@@ -4,4 +4,5 @@
     <string name="table_col1">Columna 1</string>
     <string name="table_col2">Columna 2</string>
     <string name="table_col3">Columna 3</string>
+    <string name="action_button">Botón</string>
 </resources>
