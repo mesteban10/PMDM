@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PMPD-PlayGround</string>
     <string name="name_image">Nombre de la imagen</string>
+    <string name="table_col1">Columna 1</string>
+    <string name="table_col2">Columna 2</string>
+    <string name="table_col3">Columna 3</string>
 </resources>
