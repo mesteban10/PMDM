@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/dark_grey_100">
 
-    <!-- Cabecera, LinearLayout horizontal -->
+    <!-- Cabecera -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/header_view"
         android:layout_width="match_parent"
@@ -13,295 +13,182 @@
         android:background="@color/black"
         android:orientation="horizontal">
 
-        <!-- Icono de exclamación -->
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/exclamation_image"
-            style="@style/UserAvatarView"
-            android:layout_alignParentStart="true"
-            tools:src="@drawable/ic_exclamation" />
 
-        <!-- Texto de la cabecera -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/netflix_ic"
+            style="@style/NetflixIconView"
+            android:layout_alignParentStart="true"
+            tools:src="@drawable/ic_netflix" />
+
         <TextView
+            android:id="@+id/text_programs"
             style="@style/DescriptionView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/exclamation_image"
             android:gravity="center"
-            tools:text="@string/head_text" />
+            tools:text="@string/title_header_1" />
+
+        <TextView
+            android:id="@+id/text_movies"
+            style="@style/DescriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="@string/title_header_2" />
+
+        <TextView
+            android:id="@+id/text_my_list"
+            style="@style/DescriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="@string/title_header_3" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <!--Parte que implementa los usuarios con cada una de sus descargas
-     LinearLayout vertical-->
+    <!-- Cuerpo con películas -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/header_view"
         android:orientation="vertical">
 
-        <!-- Usuario 1 -->
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/user_image_01"
-                style="@style/UserAvatarView"
-                tools:src="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/user_01"
-                style="@style/DescriptionView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/user_image_01"
-                tools:text="@string/user1_name" />
-
-        </RelativeLayout>
-
-        <!-- Primera descarga del usuario 1 -->
-        <RelativeLayout
+            android:id="@+id/popular_netflix"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/movie_1_user_01"
-                style="@style/AvatarView"
-                tools:src="@tools:sample/avatars" />
-
-            <!-- Creo el LinearLayout para poder centrar los textos a la imagen -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/popular_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/movie_1_user_01"
-                android:orientation="vertical"
-                tools:ignore="RelativeOverlap">
-
-                <TextView
-                    android:id="@+id/title_movie_1_user_1"
-                    style="@style/TitleView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/title1_name" />
-
-                <TextView
-                    style="@style/DescriptionView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/description01" />
-
-            </LinearLayout>
-
-            <!-- Icono de flecha de avanzar-->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                tools:src="@drawable/ic_right_arrow" />
-
-        </RelativeLayout>
-
-        <!-- Segunda descarga del usuario 1 -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/movie_2_user_01"
-                style="@style/AvatarView"
-                tools:src="@tools:sample/avatars" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/movie_2_user_01"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/title_movie_2_user_1"
-                    style="@style/TitleView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/title2_name" />
-
-                <TextView
-                    style="@style/DescriptionView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/description02" />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/arrow_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                tools:src="@drawable/ic_right_arrow" />
-
-        </RelativeLayout>
-
-        <!-- Usuario 2 -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_user_02"
-                style="@style/UserAvatarView"
                 android:layout_alignParentStart="true"
+                android:textColor="@color/white"
+                tools:text="@string/content_title1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/popular_first_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/popular_text"
                 tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/popular_second_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/popular_text"
+                android:layout_toEndOf="@id/popular_first_movie"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/popular_third_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/popular_text"
+                android:layout_toEndOf="@id/popular_second_movie"
+                tools:src="@tools:sample/avatars" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trending_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/user02"
-                style="@style/DescriptionView"
+                android:id="@+id/trending_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/image_user_02"
-                tools:text="@string/user2_name" />
-
-        </RelativeLayout>
-
-        <!-- Descarga del usuario 2 -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/movie_user_02"
-                style="@style/AvatarView"
-                tools:src="@tools:sample/avatars" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/movie_user_02"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/title_movie_user_02"
-                    style="@style/TitleView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/title3_name" />
-
-                <TextView
-                    style="@style/DescriptionView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/description03" />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                style="@style/Downloading_icon_view"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                tools:src="@drawable/ic_downloads_package" />
-
-        </RelativeLayout>
-
-        <!-- Usuario 3 -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_user_03"
-                style="@style/UserAvatarView"
                 android:layout_alignParentStart="true"
+                android:textColor="@color/white"
+                tools:text="@string/content_title2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/trending_first_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/trending_text"
                 tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/trending_second_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/trending_text"
+                android:layout_toEndOf="@id/trending_first_movie"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/trending_third_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/trending_text"
+                android:layout_toEndOf="@id/trending_second_movie"
+                tools:src="@tools:sample/avatars" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/see_it_again_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/user03"
-                style="@style/DescriptionView"
+                android:id="@+id/see_it_again_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@+id/image_user_03"
-                tools:text="@string/user3_name" />
-
-        </RelativeLayout>
-
-        <!-- Descarga del usuario 3 -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                android:layout_alignParentStart="true"
+                android:textColor="@color/white"
+                tools:text="@string/content_title3" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/movie_user_03"
-                style="@style/AvatarView"
+                android:id="@+id/see_it_again_first_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/see_it_again_text"
                 tools:src="@tools:sample/avatars" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/movie_user_03"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/title_movie_user_03"
-                    style="@style/TitleView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/title4_name" />
-
-                <TextView
-                    style="@style/DescriptionView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/description04" />
-
-            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/see_it_again_second_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/see_it_again_text"
+                android:layout_toEndOf="@id/see_it_again_first_movie"
+                tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                style="@style/Download_icon_view"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                tools:src="@drawable/ic_check" />
+                android:id="@+id/see_it_again_third_movie"
+                style="@style/FilmView"
+                android:layout_below="@+id/see_it_again_text"
+                android:layout_toEndOf="@id/see_it_again_second_movie"
+                tools:src="@tools:sample/avatars" />
 
         </RelativeLayout>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <!-- Pie de la vista con los iconos, LinearLayout horizontal-->
-    <LinearLayout
+    <!-- Footer con iconos de navegación -->
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/footer_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/home"
+            android:id="@+id/home_ic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:src="@drawable/ic_home" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/search"
+            android:id="@+id/search_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_search" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/next"
+            android:id="@+id/next_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_play" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/downloads"
+            android:id="@+id/downloads_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_download" />
 
@@ -309,18 +196,7 @@
             style="@style/IconNavBar"
             tools:src="@drawable/ic_menu" />
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-

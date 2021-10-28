@@ -8,7 +8,7 @@
     <dimen name="image_height">100dp</dimen>
     <dimen name="image_width">60dp</dimen>
     <dimen name="image2_height">150dp</dimen>
-    <dimen name="image2_width">140dp</dimen>
+    <dimen name="image2_width">120dp</dimen>
 
 
     <!-- Tamaños en sp -->
@@ -37,26 +37,6 @@
 
     <!-- Dimensiones Texto cabecera-->
     <dimen name="margin_end_text_header">30dp</dimen>
-
-
-
-
-
-
-
-
-
-    <dimen name="margin_start_autodescargas">10dp</dimen>
-
-
-
-
-
-
-
-
-
-
 
 
 
