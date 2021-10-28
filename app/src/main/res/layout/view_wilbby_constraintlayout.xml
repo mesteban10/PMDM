@@ -13,11 +13,13 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/text_offer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            style="@style/offer_text"
+            android:background="@drawable/rounded_corner_bg_yellow"
             tools:text="Texto1" />
 
 
@@ -25,7 +27,7 @@
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/text1"
+            app:layout_constraintStart_toStartOf="@id/text_offer"
             app:layout_constraintTop_toButton="parent"
             tools:text="Texto1" />
 
