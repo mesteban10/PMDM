@@ -5,4 +5,20 @@
     <string name="table_col2">Columna 2</string>
     <string name="table_col3">Columna 3</string>
     <string name="action_button">Botón</string>
+    <!-- Texto de la cabecera -->
+    <string name="head_text">Autodescargas</string>
+    <!-- Nombres de los usuarios -->
+    <string name="user1_name">Alex</string>
+    <string name="user2_name">Glenn</string>
+    <string name="user3_name">Niños</string>
+    <!-- Texto de los títulos de las películas/series -->
+    <string name="title1_name">YOU</string>
+    <string name="title2_name">The Umbrella Academy</string>
+    <string name="title3_name">Élite</string>
+    <string name="title4_name">Los hermanos Willoughby</string>
+    <!-- Texto de la descripción de las descargas  -->
+    <string name="description01">2 episodios | 1.5GB</string>
+    <string name="description02">3 episodios | 1.7GB</string>
+    <string name="description03">4 episodios | 2.3GB</string>
+    <string name="description04">1 h 32 min | 1GB</string>
 </resources>

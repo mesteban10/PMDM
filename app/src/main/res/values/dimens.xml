@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tamaño miniaturas -->
+    <dimen name="thumbnails_width">30dp</dimen>
+    <dimen name="thumbnails_height">50dp</dimen>
+
+    <!-- Tamaño imagenes -->
+    <dimen name="image_height">100dp</dimen>
+    <dimen name="image_width">60dp</dimen>
+
+
+    <!-- Tamaños en sp -->
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+
+    <!-- Tamaño icono check y download-->
+    <dimen name="icon_width">20dp</dimen>
+    <dimen name="icon_height">20dp</dimen>
+
+    <!-- Tamaño iconos barra de navegacion-->
+    <dimen name="icon_nav_width">40dp</dimen>
+    <dimen name="icon_nav_height">40dp</dimen>
+
+    <!-- Espacio entre los iconos de navegacion-->
+    <dimen name="icon_nav_space">40dp</dimen>
+
+    <dimen name="margin_start_autodescargas">10dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
