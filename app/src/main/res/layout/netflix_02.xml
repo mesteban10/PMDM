@@ -7,7 +7,7 @@
 
     <!-- Cabecera -->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/layout1"
+        android:id="@+id/header_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
@@ -15,37 +15,32 @@
 
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image01"
-            android:layout_width="30dp"
-            android:layout_height="50dp"
+            android:id="@+id/netflix_ic"
+            style="@style/netflix_icon_view"
             android:layout_alignParentStart="true"
-            android:layout_marginEnd="40dp"
             tools:src="@drawable/ic_netflix" />
 
         <TextView
-            android:id="@+id/text01"
+            android:id="@+id/text_programs"
             style="@style/DescriptionView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="30dp"
             android:gravity="center"
             tools:text="@string/title_header_1" />
 
         <TextView
-            android:id="@+id/text02"
+            android:id="@+id/text_movies"
             style="@style/DescriptionView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="30dp"
             android:gravity="center"
             tools:text="@string/title_header_2" />
 
         <TextView
-            android:id="@+id/text03"
+            android:id="@+id/text_my_list"
             style="@style/DescriptionView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/image02"
             android:gravity="center"
             tools:text="@string/title_header_3" />
 
@@ -53,19 +48,19 @@
 
     <!-- Cuerpo con películas -->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/layout2"
-        android:layout_width="wrap_content"
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout1"
+        android:layout_below="@id/header_view"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/relativelayout1"
+            android:id="@+id/popular_netflix"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/text04"
+                android:id="@+id/popular_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -73,34 +68,34 @@
                 tools:text="@string/content_title1" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image02"
+                android:id="@+id/popular_first_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text04"
+                android:layout_below="@+id/popular_text"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image03"
+                android:id="@+id/popular_second_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text04"
-                android:layout_toEndOf="@id/image02"
+                android:layout_below="@+id/popular_text"
+                android:layout_toEndOf="@id/popular_first_movie"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image04"
+                android:id="@+id/popular_third_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text04"
-                android:layout_toEndOf="@id/image03"
+                android:layout_below="@+id/popular_text"
+                android:layout_toEndOf="@id/popular_second_movie"
                 tools:src="@tools:sample/avatars" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relativelayout2"
+            android:id="@+id/trending_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/text05"
+                android:id="@+id/trending_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -108,34 +103,34 @@
                 tools:text="@string/content_title2" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image05"
+                android:id="@+id/trending_first_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text05"
+                android:layout_below="@+id/trending_text"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image06"
+                android:id="@+id/trending_second_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text05"
-                android:layout_toEndOf="@id/image05"
+                android:layout_below="@+id/trending_text"
+                android:layout_toEndOf="@id/trending_first_movie"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image07"
+                android:id="@+id/trending_third_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text05"
-                android:layout_toEndOf="@id/image06"
+                android:layout_below="@+id/trending_text"
+                android:layout_toEndOf="@id/trending_second_movie"
                 tools:src="@tools:sample/avatars" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relativelayout3"
+            android:id="@+id/see_it_again_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/text06"
+                android:id="@+id/see_it_again_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -143,23 +138,23 @@
                 tools:text="@string/content_title3" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image08"
+                android:id="@+id/see_it_again_first_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text06"
+                android:layout_below="@+id/see_it_again_text"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image09"
+                android:id="@+id/see_it_again_second_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text06"
-                android:layout_toEndOf="@id/image08"
+                android:layout_below="@+id/see_it_again_text"
+                android:layout_toEndOf="@id/see_it_again_first_movie"
                 tools:src="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image10"
+                android:id="@+id/see_it_again_third_movie"
                 style="@style/FilmView"
-                android:layout_below="@+id/text06"
-                android:layout_toEndOf="@id/image09"
+                android:layout_below="@+id/see_it_again_text"
+                android:layout_toEndOf="@id/see_it_again_second_movie"
                 tools:src="@tools:sample/avatars" />
 
         </RelativeLayout>
@@ -169,32 +164,31 @@
 
     <!-- Footer con iconos de navegación -->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearlayout3"
-        android:layout_width="wrap_content"
+        android:id="@+id/footer_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/home"
+            android:id="@+id/home_ic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:src="@drawable/ic_home" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/search"
+            android:id="@+id/search_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_search" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/next"
+            android:id="@+id/next_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_play" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/dwonloads"
+            android:id="@+id/downloads_ic"
             style="@style/IconNavBar"
             tools:src="@drawable/ic_download" />
 
