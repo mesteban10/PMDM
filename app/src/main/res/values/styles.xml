@@ -53,4 +53,10 @@
         <item name="android:padding">@dimen/padding_review</item>
     </style>
 
+    <style name="RoundedFigureTimeDelivery">
+        <item name="android:padding">@dimen/padding_general</item>
+        <item name="android:layout_marginBottom">@dimen/margin_bottom_time_del</item>
+        <item name="android:layout_marginStart">@dimen/margin_start</item>
+    </style>
+
 </resources>

@@ -20,9 +20,9 @@
             style="@style/OfferText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_bg_yellow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/rounded_corner_bg_yellow"
             tools:text="@string/offer_name" />
 
         <TextView
@@ -47,6 +47,7 @@
             tools:text="@string/food_name" />
 
         <TextView
+            style="@style/RoundedFigureTimeDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_bg_black"
@@ -96,8 +97,8 @@
             app:drawableLeftCompat="@drawable/ic_delivery"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toRightOf="@id/text_nuevo"
-            tools:text="@string/delivery_price"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:text="@string/delivery_price" />
 
         <TextView
             android:id="@+id/restaurant_punctuation"
@@ -108,8 +109,8 @@
             app:drawableLeftCompat="@drawable/ic_star"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/price_delivery"
-            tools:text="@string/punctuation_restaurant"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:text="@string/punctuation_restaurant" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@
 
     <dimen name="padding_review">6dp</dimen>
 
-
+    <dimen name="margin_bottom_time_del">10dp</dimen>
 
 
 </resources>
