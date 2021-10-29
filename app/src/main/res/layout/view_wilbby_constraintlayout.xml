@@ -47,6 +47,7 @@
             tools:text="@string/food_name" />
 
         <TextView
+            android:id="@+id/text_time_delivery"
             style="@style/RoundedFigureTimeDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,6 +110,7 @@
             app:drawableLeftCompat="@drawable/ic_star"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/price_delivery"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints"
             tools:text="@string/punctuation_restaurant" />
 

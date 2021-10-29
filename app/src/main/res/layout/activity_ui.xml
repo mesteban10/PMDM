@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ut3.UiActivity">
 
+    <include layout="@layout/view_wilbby_constraintlayout"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
