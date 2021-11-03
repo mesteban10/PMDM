@@ -53,6 +53,7 @@ class UiActivity : AppCompatActivity() {
 */
 
     private fun setupView() {
+
         setText()
         setImage()
     }
@@ -96,6 +97,8 @@ class UiActivity : AppCompatActivity() {
         icLike.setImageResource(R.drawable.ic_like_heart)
 
     }
+
+
 
 
 }
