@@ -1,4 +1,3 @@
 package com.mestabn.myapplication.ut3.alertExercise.domain
 
-class FileModel {
-}
+data class FileModel(val name: String, val url: String)
