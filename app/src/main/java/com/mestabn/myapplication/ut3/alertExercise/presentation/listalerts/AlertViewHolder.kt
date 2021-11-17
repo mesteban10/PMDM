@@ -1,8 +1,9 @@
-package com.mestabn.myapplication.ut3.alertExercise.presentation
+package com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.mestabn.myapplication.databinding.ViewItemAlertsBinding
+import com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionalerts.DescriptionAlertActivity
 
 class AlertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -14,7 +15,7 @@ class AlertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         bind.descriptionAlert.text  = alertViewState.body
         itemView.setOnClickListener {
             itemView.context.startActivity(
-                SecondActivity.getIntent(
+                DescriptionAlertActivity.getIntent(
                     itemView.context,
                     alertViewState.id
                 )

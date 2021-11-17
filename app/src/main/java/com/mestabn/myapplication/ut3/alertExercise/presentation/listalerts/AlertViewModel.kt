@@ -1,10 +1,7 @@
-package com.mestabn.myapplication.ut3.alertExercise.presentation
+package com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts
 
 import androidx.lifecycle.ViewModel
-import com.mestabn.myapplication.ut3.alertExercise.domain.AlertModel
 import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertsUseCase
-import com.mestabn.myapplication.ut3.ex02.domain.GetUserUseCase
-import com.mestabn.myapplication.ut3.ex02.presentation.UserViewState
 
 class AlertViewModel(private val getAlertsUseCase: GetAlertsUseCase): ViewModel() {
     fun getAlerts(): List<AlertViewState> {

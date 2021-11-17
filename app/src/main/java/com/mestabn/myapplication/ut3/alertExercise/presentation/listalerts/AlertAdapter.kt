@@ -1,4 +1,4 @@
-package com.mestabn.myapplication.ut3.alertExercise.presentation
+package com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,10 +1,9 @@
-package com.mestabn.myapplication.ut3.alertExercise.presentation
+package com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mestabn.myapplication.databinding.ActivityAlertBinding
-import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
@@ -48,4 +47,6 @@ class AlertActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+
 }

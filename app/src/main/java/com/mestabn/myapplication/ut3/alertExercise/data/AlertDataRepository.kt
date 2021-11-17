@@ -7,4 +7,10 @@ class AlertDataRepository(private val remoteSource: AlertRemoteSource) : AlertRe
     override fun getAlerts(): List<AlertModel> {
         return remoteSource.getAlerts()
     }
+
+    override fun getAlert(alertId: Int): AlertModel? {
+        return remoteSource.getAlert(alertId)
+    }
+
+
 }

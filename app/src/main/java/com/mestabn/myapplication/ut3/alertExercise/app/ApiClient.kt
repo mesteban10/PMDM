@@ -1,13 +1,14 @@
 package com.mestabn.myapplication.ut3.alertExercise.app
 
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertApiModel
-import com.mestabn.myapplication.ut3.alertExercise.domain.AlertModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 interface ApiClient {
     fun getAlerts(): List<AlertApiModel>
+    fun getAlert(alertId: String): AlertApiModel?
 }
+
 class MockApiAlerts : ApiClient {
 
     override fun getAlerts(): List<AlertApiModel> =
@@ -18,6 +19,11 @@ class MockApiAlerts : ApiClient {
             AlertApiModel("4", "Titulo 4", "Resumen alerta 4", "2", "2021-01-07"),
             AlertApiModel("5", "Titulo 5", "Resumen alerta 5", "1", "2021-01-06"),
         )
+
+    override fun getAlert(alertId: String): AlertApiModel? {
+        return AlertApiModel("1", "Titulo 1", "Resumen alerta 1", "1", "2021-01-10")
+
+    }
 
 }
 class RetrofitApiAlerts : ApiClient {
@@ -38,7 +44,6 @@ class RetrofitApiAlerts : ApiClient {
         .build()
 
 
-
     override fun getAlerts(): List<AlertApiModel> {
         val call = apiEndPoint.getAlerts()
         val response = call.execute()
@@ -47,6 +52,16 @@ class RetrofitApiAlerts : ApiClient {
 
         } else {
             mutableListOf()
+        }
+    }
+
+    override fun getAlert(alertId: String): AlertApiModel? {
+        val call = apiEndPoint.getAlert(alertId)
+        val response = call.execute()
+        return if (response.isSuccessful) {
+            response.body()?.data
+        } else {
+            null
         }
     }
 
