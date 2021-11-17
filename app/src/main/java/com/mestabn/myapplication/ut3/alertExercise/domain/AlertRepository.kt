@@ -1,4 +1,5 @@
 package com.mestabn.myapplication.ut3.alertExercise.domain
 
-class AlertRepository {
+interface AlertRepository {
+    fun getAlerts(): List<AlertModel>
 }
