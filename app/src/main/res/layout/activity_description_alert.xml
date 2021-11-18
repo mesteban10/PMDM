@@ -56,12 +56,13 @@
             app:layout_constraintTop_toBottomOf="@id/separator_first">
 
             <TableRow>
-
+                <TextView android:text="@string/table_col1" />
                 <TextView android:text="@string/table_col1" />
             </TableRow>
 
             <TableRow>
 
+                <TextView android:text="@string/table_col1" />
                 <TextView android:text="@string/table_col1" />
             </TableRow>
         </TableLayout>

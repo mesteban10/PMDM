@@ -2,27 +2,57 @@ package com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionaler
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mestabn.myapplication.R
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
+import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
+import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
+import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
+import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertUseCase
 
 class DescriptionAlertActivity : AppCompatActivity() {
+
+    private val bind: ActivityDescriptionAlertBinding by lazy {
+        ActivityDescriptionAlertBinding.inflate(layoutInflater)
+    }
+
+    private val viewModel: DescriptionAlertViewModel = DescriptionAlertViewModel(
+        GetAlertUseCase(
+            AlertDataRepository(
+                AlertRemoteSource(RetrofitApiAlerts())
+            )
+        )
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_description_alert)
-        getAlertId()
+        setupView()
+        loadAlerts()
+    }
+
+    private fun setupView() {
+        setContentView(bind.root)
+    }
+
+    private fun loadAlerts(){
+        val viewState = viewModel.getAlert(getAlertId())
+        bind.titleAlertDescription.text = viewState?.titleContent
+        bind.titleAlertDescription.text = viewState?.titleContent
+        bind.titleAlertDescription.text = viewState?.titleContent
+        bind.titleAlertDescription.text = viewState?.titleContent
     }
 
     private fun getAlertId(): String {
-        return intent.extras!!.getString(KEY_USER_ID, "0")
+        return intent.extras!!.getString(KEY_ALERT_ID, "0")
     }
 
     companion object {
-        private val KEY_USER_ID = "key_user_id"
+        private val KEY_ALERT_ID = "key_alert_id"
 
         fun getIntent(context: Context, alertId: String): Intent {
             val intent = Intent(context, DescriptionAlertActivity::class.java)
-            intent.putExtra(KEY_USER_ID, alertId)
+            intent.putExtra(KEY_ALERT_ID, alertId)
             return intent
         }
     }
