@@ -36,11 +36,16 @@ class DescriptionAlertActivity : AppCompatActivity() {
     }
 
     private fun loadAlerts(){
-        val viewState = viewModel.getAlert(getAlertId())
-        bind.titleAlertDescription.text = viewState?.titleContent
-        bind.titleAlertDescription.text = viewState?.titleContent
-        bind.titleAlertDescription.text = viewState?.titleContent
-        bind.titleAlertDescription.text = viewState?.titleContent
+        Thread {
+            val viewState = viewModel.getAlert(getAlertId())
+            runOnUiThread {
+                bind.titleAlertDescription.text = viewState?.title
+                bind.contentFiles.text = viewState?.body
+                bind.filesTitle.text =
+            }
+        }.start()
+
+
     }
 
     private fun getAlertId(): String {

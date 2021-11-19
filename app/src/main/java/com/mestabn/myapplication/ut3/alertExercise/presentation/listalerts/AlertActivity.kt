@@ -1,6 +1,8 @@
 package com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mestabn.myapplication.databinding.ActivityAlertBinding
@@ -32,6 +34,8 @@ class AlertActivity : AppCompatActivity() {
         getAlerts()
         setupView()
     }
+
+
 
     private fun setupView() {
         bind.listAlerts.adapter = alertAdapter
