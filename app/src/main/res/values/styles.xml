@@ -13,7 +13,7 @@
         <item name="android:layout_height">@dimen/thumbnails_height</item>
     </style>
 
-    <!-- Estilo para el texto de los títulos de las películas/series -->
+    <!-- Estilo para el texto de los títulos -->
     <style name="TitleView">
         <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/white</item>
@@ -21,18 +21,13 @@
 
     <!-- Estilo del texto de la descripcion de las películas/series -->
     <style name="DescriptionView">
-        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:layout_marginStart">@dimen/margin_start_autodescargas</item>
+        <item name="android:layout_marginEnd">@dimen/margin_end_text_header</item>
     </style>
 
     <!-- Estilo de los iconos de descargando y descargado -->
-    <style name="Download_icon_view">
-        <item name="android:layout_width">@dimen/icon_width</item>
-        <item name="android:layout_height">@dimen/icon_height</item>
-    </style>
-
-    <style name="Downloading_icon_view">
+    <style name="IconsView">
         <item name="android:layout_width">@dimen/icon_width</item>
         <item name="android:layout_height">@dimen/icon_height</item>
     </style>
@@ -42,21 +37,19 @@
         <item name="android:layout_width">@dimen/icon_nav_width</item>
         <item name="android:layout_height">@dimen/icon_nav_height</item>
         <item name="android:layout_marginStart">@dimen/icon_nav_space</item>
-
     </style>
 
+    <!-- Estilo imagenes netf2 -->
+    <style name="FilmView">
+        <item name="android:layout_width">@dimen/image2_width</item>
+        <item name="android:layout_height">@dimen/image2_height</item>
+        <item name="android:layout_marginLeft">@dimen/image_left_margin</item>
+    </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Estilo icono netflix cabecera -->
+    <style name="NetflixIconView">
+        <item name="android:layout_width">@dimen/netflix_width</item>
+        <item name="android:layout_height">@dimen/netflix_height</item>
+        <item name="android:layout_marginEnd">@dimen/netflix_margin_end</item>
+    </style>
 </resources>
