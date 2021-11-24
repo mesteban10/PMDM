@@ -1,7 +1,5 @@
 package com.mestabn.myapplication.ut3.alertExercise.domain
 
-import com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionalerts.DescriptionAlertViewState
-
 data class AlertModel(
     val id: String,
     val title: String,
@@ -12,3 +10,7 @@ data class AlertModel(
     val source: String,
     val files: List<FileModel>
 )
+
+
+
+

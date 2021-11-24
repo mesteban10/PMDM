@@ -33,14 +33,15 @@
             android:id="@+id/files_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:paddingTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/icon_alert"
             tools:ignore="MissingConstraints"
-            tools:text="@string/files_download" />
+            android:text="@string/files_download" />
 
         <View
-            android:id="@+id/separator_first"
+            android:id="@+id/separator_first_files"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="10dp"
@@ -57,7 +58,7 @@
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
             android:stretchColumns="0,2"
-            app:layout_constraintTop_toBottomOf="@id/separator_first">
+            app:layout_constraintTop_toBottomOf="@id/separator_first_files">
 
             <TableRow android:background="@drawable/border_table">
                 <TextView
@@ -70,7 +71,7 @@
                     android:src="@drawable/ic_pdf" />
             </TableRow>
 
-            <TableRow android:background="@drawable/border_table">
+            <TableRow android:background="@drawable/border_table" android:id="@+id/second_file">
                 <TextView
                     android:id="@+id/file_two"
                     android:padding="12dp"
@@ -82,31 +83,33 @@
         </TableLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/files_content_title"
+            android:id="@+id/alert_content_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:paddingTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/list_files"
             tools:ignore="MissingConstraints"
-            tools:text="@string/content_alert" />
+            android:text="@string/content_alert" />
 
         <View
-            android:id="@+id/separator_second"
+            android:id="@+id/separator_second_content_alert"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="10dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/files_content_title"
+            app:layout_constraintTop_toBottomOf="@id/alert_content_title"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/content_files"
+            android:id="@+id/content_files_description"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/separator_second"
+            app:layout_constraintTop_toBottomOf="@id/separator_second_content_alert"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

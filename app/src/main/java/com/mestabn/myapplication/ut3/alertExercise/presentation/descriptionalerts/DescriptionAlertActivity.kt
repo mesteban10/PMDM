@@ -2,10 +2,15 @@ package com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionaler
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
+import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
@@ -17,7 +22,7 @@ class DescriptionAlertActivity : AppCompatActivity() {
         ActivityDescriptionAlertBinding.inflate(layoutInflater)
     }
 
-    private val viewModel: DescriptionAlertViewModel = DescriptionAlertViewModel(
+    private val viewModelDescriptionAlert: DescriptionAlertViewModel = DescriptionAlertViewModel(
         GetAlertUseCase(
             AlertDataRepository(
                 AlertRemoteSource(RetrofitApiAlerts())
@@ -28,25 +33,27 @@ class DescriptionAlertActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupView()
-        loadAlerts()
+        loadAlert()
     }
 
     private fun setupView() {
         setContentView(bind.root)
     }
 
-    private fun loadAlerts(){
-        Thread {
-            val viewState = viewModel.getAlert(getAlertId())
-            runOnUiThread {
-                bind.titleAlertDescription.text = viewState?.title
-                bind.contentFiles.text = viewState?.body
-                bind.filesTitle.text =
+    private fun loadAlert() = Thread {
+
+        val alert = viewModelDescriptionAlert.getAlert(getAlertId())
+        runOnUiThread {
+            if (alert != null) {
+                bind.titleAlertDescription.text = alert.title
+                bind.fileOne.text = alert.files[0].name
+                bind.fileOne.visibility = View.VISIBLE
+                bind.secondFile.visibility = View.GONE
+                bind.contentFilesDescription.text =
+                    HtmlCompat.fromHtml(alert.body, HtmlCompat.FROM_HTML_MODE_LEGACY);
             }
-        }.start()
-
-
-    }
+        }
+    }.start()
 
     private fun getAlertId(): String {
         return intent.extras!!.getString(KEY_ALERT_ID, "0")

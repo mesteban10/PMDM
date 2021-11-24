@@ -6,10 +6,14 @@ import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mestabn.myapplication.databinding.ActivityAlertBinding
+import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
+import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
+import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertUseCase
 import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertsUseCase
+import com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionalerts.DescriptionAlertViewModel
 
 class AlertActivity : AppCompatActivity() {
 
@@ -21,7 +25,12 @@ class AlertActivity : AppCompatActivity() {
         )
     )
 
+
+
+
+
     private val alertAdapter = AlertsAdapter()
+
 
     private val bind: ActivityAlertBinding by lazy {
         ActivityAlertBinding.inflate(layoutInflater)
@@ -51,6 +60,8 @@ class AlertActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+
 
 
 }
