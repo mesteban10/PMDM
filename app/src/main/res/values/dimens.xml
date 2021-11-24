@@ -44,4 +44,16 @@
 
     <dimen name="width_text_card">340dp</dimen>
 
+    <dimen name="padding_elements_details_alert">10dp</dimen>
+
+
+    <dimen name="padding_top_details_title_alert">10dp</dimen>
+    <dimen name="margin_start_details_titles_alert">10dp</dimen>
+
+    <dimen name="margin_separator_details_alert">10dp</dimen>
+    <dimen name="height_separator_details_alert">1dp</dimen>
+    
+    <dimen name="margin_top_table_files_detail_alert">20dp</dimen>
+
+
 </resources>

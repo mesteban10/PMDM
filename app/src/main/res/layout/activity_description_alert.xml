@@ -13,16 +13,17 @@
             android:id="@+id/icon_alert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="@dimen/padding_elements_details_alert"
             android:src="@drawable/ic_info"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_alert_description"
-            android:layout_width="350dp"
+            android:padding="@dimen/padding_elements_details_alert"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_alert"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,8 +34,7 @@
             android:id="@+id/files_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:paddingTop="20dp"
+            style="@style/MarginStartAndPaddingTopTitlesDetailsAlert"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/icon_alert"
             tools:ignore="MissingConstraints"
@@ -43,16 +43,15 @@
         <View
             android:id="@+id/separator_first_files"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="10dp"
+            style="@style/LineSeparatorMarginAndHeight"
             android:background="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/files_title"
             tools:ignore="MissingConstraints" />
 
         <TableLayout
-            android:layout_marginTop="20dp"
-            android:padding="10dp"
+            android:layout_marginTop="@dimen/margin_top_table_files_detail_alert"
+            android:padding="@dimen/padding_elements_details_alert"
             android:id="@+id/list_files"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,23 +60,31 @@
             app:layout_constraintTop_toBottomOf="@id/separator_first_files">
 
             <TableRow android:background="@drawable/border_table">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:id="@+id/file_one"
-                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/padding_elements_details_alert"
                     android:text="@string/table_col1" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:padding="6dp"
+                    android:padding="@dimen/padding_elements_details_alert"
                     android:src="@drawable/ic_pdf" />
             </TableRow>
 
             <TableRow android:background="@drawable/border_table" android:id="@+id/second_file">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:id="@+id/file_two"
-                    android:padding="12dp"
+                    android:padding="@dimen/padding_elements_details_alert"
                     android:text="@string/table_col1" />
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:padding="6dp"
+                    android:padding="@dimen/padding_elements_details_alert"
                     android:src="@drawable/ic_pdf" />
             </TableRow>
         </TableLayout>
@@ -86,8 +93,7 @@
             android:id="@+id/alert_content_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:paddingTop="10dp"
+            style="@style/MarginStartAndPaddingTopTitlesDetailsAlert"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/list_files"
             tools:ignore="MissingConstraints"
@@ -96,8 +102,7 @@
         <View
             android:id="@+id/separator_second_content_alert"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="10dp"
+            style="@style/LineSeparatorMarginAndHeight"
             android:background="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/alert_content_title"
@@ -105,7 +110,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/content_files_description"
-            android:padding="10dp"
+            android:padding="@dimen/padding_elements_details_alert"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
