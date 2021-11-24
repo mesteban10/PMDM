@@ -2,6 +2,7 @@ package com.mestabn.myapplication.ut3.ex06
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mestabn.myapplication.R
 
 class Ut03Ex06Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
