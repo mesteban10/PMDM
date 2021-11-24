@@ -1,16 +1,17 @@
 package com.mestabn.myapplication.ut3.alertExercise.app
 
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertApiModel
-import com.mestabn.myapplication.ut3.alertExercise.domain.AlertModel
+import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-interface ApiClient {
-    fun getAlerts(): List<AlertApiModel>
+interface ApiAlert {
+    suspend fun getAlerts(): List<AlertApiModel>
 }
-class MockApiAlerts : ApiClient {
 
-    override fun getAlerts(): List<AlertApiModel> =
+class MockApiAlerts : ApiAlert {
+
+    override suspend fun getAlerts(): List<AlertApiModel> =
         mutableListOf(
             AlertApiModel("1", "Titulo 1", "Resumen alerta 1", "1", "2021-01-10"),
             AlertApiModel("2", "Titulo 2", "Resumen alerta 2", "1", "2021-01-09"),
@@ -20,7 +21,8 @@ class MockApiAlerts : ApiClient {
         )
 
 }
-class RetrofitApiAlerts : ApiClient {
+
+class RetrofitApiAlerts : ApiAlert {
 
     private val urlEndPoint: String = "https://plagricola.sitehub.es/api/public/"
     private var apiEndPoint: ApiEndPoint
@@ -38,10 +40,8 @@ class RetrofitApiAlerts : ApiClient {
         .build()
 
 
-
-    override fun getAlerts(): List<AlertApiModel> {
-        val call = apiEndPoint.getAlerts()
-        val response = call.execute()
+    override suspend fun getAlerts(): List<AlertApiModel> = with(Dispatchers.IO){
+        val response = apiEndPoint.getAlerts()
         return if (response.isSuccessful) {
             response.body()?.data ?: mutableListOf()
 

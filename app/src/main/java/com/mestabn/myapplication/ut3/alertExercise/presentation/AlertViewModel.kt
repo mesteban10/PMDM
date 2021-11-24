@@ -1,16 +1,37 @@
 package com.mestabn.myapplication.ut3.alertExercise.presentation
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.mestabn.myapplication.ut3.alertExercise.domain.AlertModel
+import androidx.lifecycle.viewModelScope
 import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertsUseCase
-import com.mestabn.myapplication.ut3.ex02.domain.GetUserUseCase
-import com.mestabn.myapplication.ut3.ex02.presentation.UserViewState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.random.Random
 
 class AlertViewModel(private val getAlertsUseCase: GetAlertsUseCase): ViewModel() {
-    fun getAlerts(): List<AlertViewState> {
-        val alerts = getAlertsUseCase.execute()
-        return alerts.map { alertModel -> AlertViewState(
-            alertModel.id, alertModel.title, alertModel.datePublished, alertModel.summary
-        )  }
+
+    //Creamos la variable de forma pública para los observadores
+    val alertViewState: LiveData<List<AlertViewState>>
+        get() = _alertViewState
+
+
+    //Variable que nos sirve para fijarnos en los cambios y notificar sus cambios
+    private val _alertViewState: MutableLiveData<List<AlertViewState>> by lazy {
+        MutableLiveData<List<AlertViewState>>()
     }
+
+    fun fetchAlerts() = viewModelScope.launch(Dispatchers.Main) {
+        val alerts = getAlertsUseCase.execute()
+        _alertViewState.value = alerts.map { AlertViewState(it.id, it.title, it.datePublished, it.summary) }
+    }
+
 }
+
+
+
+
+
+
+
+
