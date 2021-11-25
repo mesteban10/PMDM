@@ -38,6 +38,10 @@
     <!-- Dimensiones Texto cabecera-->
     <dimen name="margin_end_text_header">30dp</dimen>
 
+    <!-- Dimensiones listado de formularios de usuarios -->
+    <dimen name="padding_card_view_form">10dp</dimen>
+    <dimen name="padding_all_text_view_form">5dp</dimen>
+
 
 
 </resources>
