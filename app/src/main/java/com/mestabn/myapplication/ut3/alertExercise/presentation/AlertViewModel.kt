@@ -21,7 +21,7 @@ class AlertViewModel(private val getAlertsUseCase: GetAlertsUseCase): ViewModel(
         MutableLiveData<List<AlertViewState>>()
     }
 
-    fun fetchAlerts() = viewModelScope.launch(Dispatchers.Main) {
+    fun loadAlerts() = viewModelScope.launch(Dispatchers.Main) {
         val alerts = getAlertsUseCase.execute()
         _alertViewState.value = alerts.map { AlertViewState(it.id, it.title, it.datePublished, it.summary) }
     }

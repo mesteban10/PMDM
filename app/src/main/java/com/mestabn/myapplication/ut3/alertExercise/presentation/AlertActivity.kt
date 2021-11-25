@@ -33,24 +33,25 @@ class AlertActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bind.root)
-
+        setupView()
+        setupViewStateObservers()
+        viewModel.loadAlerts()
 
     }
 
-    /*
+
     private fun setupView() {
         bind.listAlerts.adapter = alertAdapter
         bind.listAlerts.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
-*/
+
 
     //Función que deberia ejecutarse una vez, oncreate
     private fun setupViewStateObservers() {
         // Se crea el observador. Hay que indicar qué voy a recibir del observador.
-        val alertObserver = Observer<List<AlertViewState>> { alerts ->
-            // Actualiamos la UI con los datos recibidos desde el LiveData (Observer)
-            renderUi(alerts)
+        val alertObserver = Observer<List<AlertViewState>> {
+            renderUi(it)
         }
         // Observamos al LiveData declarado en el ViewModel
         viewModel.alertViewState.observe(this, alertObserver)
@@ -58,6 +59,6 @@ class AlertActivity : AppCompatActivity() {
 
 
     private fun renderUi(alerts: List<AlertViewState>) {
-
+        alertAdapter.setItems(alerts)
     }
 }
