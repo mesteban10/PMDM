@@ -55,5 +55,6 @@
     
     <dimen name="margin_top_table_files_detail_alert">20dp</dimen>
 
+    <dimen name="width_title_detail_alerts">340dp</dimen>
 
 </resources>
