@@ -1,56 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/name_person_form"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/surname_person_form"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_person_form"
-        android:hint="Apellidos"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name_person_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/comunity_person_form"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/surname_person_form"
-        android:hint="Apellidos"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/surname_person_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellidos"
+            app:layout_constraintTop_toBottomOf="@id/name_person_form"
+            tools:ignore="MissingConstraints" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/comunity_person_form"
-        tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/radio_pirates"
+        <TextView
+            android:id="@+id/title_comunity_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mujer" />
+            android:layout_marginTop="10dp"
+            android:text="Comunity"
+            app:layout_constraintTop_toBottomOf="@id/surname_person_form"
+            tools:ignore="MissingConstraints" />
 
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/radio_ninjas"
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/comunity_person_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/communities_array"
+            app:layout_constraintTop_toBottomOf="@id/title_comunity_person" />
+
+        <TextView
+            android:id="@+id/gender_person_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Varón" />
-    </RadioGroup>
+            android:layout_marginTop="10dp"
+            android:text="@string/gender_person_form"
+            app:layout_constraintTop_toBottomOf="@id/comunity_person_form"
+            tools:ignore="MissingConstraints" />
+
+        <RadioGroup
+            android:id="@+id/select_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/gender_person_title"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_woman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mujer" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio_man"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_height="wrap_content"
+                android:text="Varón" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/demarcation_person_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/gender_person_form"
+            app:layout_constraintTop_toBottomOf="@id/select_gender"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/demarcation_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/demarcation_person_title">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portero" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Defensa" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medio Centro" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delantero" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/demarcation_options"
+            tools:layout_editor_absoluteX="20dp">
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/secondaryColor"
+                android:paddingStart="40dp"
+                android:paddingEnd="35dp"
+                android:text="Guardar"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

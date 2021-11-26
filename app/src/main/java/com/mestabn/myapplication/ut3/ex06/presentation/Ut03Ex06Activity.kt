@@ -1,15 +1,14 @@
 package com.mestabn.myapplication.ut3.ex06.presentation
 
-import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mestabn.myapplication.R
 import com.mestabn.myapplication.databinding.ActivityUt03Ex06Binding
+
 
 class Ut03Ex06Activity : AppCompatActivity() {
 
@@ -77,7 +76,7 @@ class Ut03Ex06Activity : AppCompatActivity() {
             R.id.action_change_fragment -> {
                 val fragment = supportFragmentManager.findFragmentByTag("1")
                 when(fragment){
-                   null ->  replaceFragment(binding.containerFragment.id, Ut03Ex06ListFragment.createInstance())
+                    null ->  replaceFragment(binding.containerFragment.id, Ut03Ex06ListFragment.createInstance())
 
                     else -> replaceFragment(binding.containerFragment.id, Ut03Ex06FormFragment.createInstance())
                 }
@@ -96,6 +95,4 @@ class Ut03Ex06Activity : AppCompatActivity() {
 
 
     }
-
 }
-

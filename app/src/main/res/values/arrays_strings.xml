@@ -10,4 +10,26 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+
+    <string-array name="communities_array">
+        <item>Andalucía</item>
+        <item>Aragón</item>
+        <item>Principado de Asturias</item>
+        <item>Illes Balears</item>
+        <item>Canarias</item>
+        <item>Cantabria</item>
+        <item>Castilla y León</item>
+        <item>Castilla-La Mancha</item>
+        <item>Cataluña</item>
+        <item>Comunitat Valenciana</item>
+        <item>Extremadura</item>
+        <item>Galicia</item>
+        <item>Comunidad de Madrid</item>
+        <item>Región de Murcia</item>
+        <item>Comunidad Foral de Navarra</item>
+        <item>País Vasco</item>
+        <item>La Rioja</item>
+        <item>Ciudad Autónoma de Ceuta</item>
+        <item>Ciudad Autónoma de Melilla</item>
+    </string-array>
 </resources>
