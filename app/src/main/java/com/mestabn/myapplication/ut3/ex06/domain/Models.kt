@@ -7,7 +7,6 @@ data class UserModel(
     val gender: String,
     val demarcation: List<DemarcationModel>
 
-
 )
 
 data class DemarcationModel(val name: String)

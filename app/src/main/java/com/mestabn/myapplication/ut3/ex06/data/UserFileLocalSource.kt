@@ -13,7 +13,7 @@ class UserFileLocalSource(
     /**
      * Obtengo un listado completo de alertas.
      */
-    override suspend fun findAll(): List<UserModel> {
+    override fun findAll(): List<UserModel> {
         val alerts: MutableList<UserModel> = mutableListOf()
         val file = getFile(USERS_FILENAME)
         val lines = file.readLines()
@@ -25,7 +25,7 @@ class UserFileLocalSource(
     }
 
 
-    override suspend fun save(user: UserModel) {
+    override fun save(user: UserModel) {
         val file = getFile(getUserDetailFileName(user.name))
         file.writeText(serializer.toJson(user, UserModel::class.java))
     }

@@ -1,4 +1,4 @@
-package com.mestabn.myapplication.ut3.ex06.presentation
+package com.mestabn.myapplication.ut3.ex06.presentation.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mestabn.myapplication.databinding.FragmentUt03Ex06ListBinding
+import com.mestabn.myapplication.ut3.ex06.presentation.form.Ut03Ex06FormFragment
 
 class Ut03Ex06ListFragment : Fragment() {
 
