@@ -14,7 +14,7 @@ class AlertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         bind.descriptionAlert.text  = alertViewState.body
         itemView.setOnClickListener {
             itemView.context.startActivity(
-                SecondActivity.getIntent(
+                AlertDescriptionActivity.getIntent(
                     itemView.context,
                     alertViewState.id
                 )
