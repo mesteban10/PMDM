@@ -6,18 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mestabn.myapplication.R
 
-class SecondActivity : AppCompatActivity() {
+class AlertDescriptionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_description_alert)
     }
 
     companion object {
         private val KEY_USER_ID = "key_user_id"
 
         fun getIntent(context: Context, alertId: String): Intent {
-            val intent = Intent(context, SecondActivity::class.java)
+            val intent = Intent(context, AlertDescriptionActivity::class.java)
             intent.putExtra(KEY_USER_ID, alertId)
             return intent
         }
