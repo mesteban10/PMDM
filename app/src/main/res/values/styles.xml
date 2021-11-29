@@ -46,14 +46,14 @@
     </style>
 
     <style name="MarginsInfo">
-        <item name="android:layout_marginTop">@dimen/margin_top_info</item>
-        <item name="android:layout_marginBottom">@dimen/margin_bottom_info</item>
-        <item name="android:layout_marginEnd">@dimen/margin_end_info</item>
-        <item name="android:layout_marginStart">@dimen/margin_start_info</item>
+        <item name="android:layout_marginTop">@dimen/margin_info</item>
+        <item name="android:layout_marginBottom">@dimen/margin_info</item>
+        <item name="android:layout_marginEnd">@dimen/margin_info</item>
+        <item name="android:layout_marginStart">@dimen/margin_info</item>
     </style>
 
     <style name="TextInfoAlert">
-        <item name="android:layout_marginStart">@dimen/margin_start_info</item>
+        <item name="android:layout_marginStart">@dimen/margin_info</item>
     </style>
 
     <style name="Vineyard_image_height">

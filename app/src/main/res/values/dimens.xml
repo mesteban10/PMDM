@@ -27,10 +27,7 @@
 
     <dimen name="margin_start_autodescargas">10dp</dimen>
 
-    <dimen name="margin_top_info">10dp</dimen>
-    <dimen name="margin_end_info">10dp</dimen>
-    <dimen name="margin_bottom_info">10dp</dimen>
-    <dimen name="margin_start_info">10dp</dimen>
+    <dimen name="margin_info">10dp</dimen>
 
     <dimen name="margin_start_text_info">10dp</dimen>
 

@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_view"
+    android:id="@+id/alert_card_view"
     style="@style/CardViewAlerts"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -13,24 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ut3.alertExercise.presentation.AlertActivity">
-
-        <!--
-        <RelativeLayout
-            android:id="@+id/principal_image"
-            style="@style/Vineyard_image_height"
-            android:layout_width="match_parent"
-            android:background="@drawable/ic_vineyard">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/text_avisos"
-                style="@style/TextAvisosPadding"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:text="@string/avisos_text" />
-
-        </RelativeLayout>-->
 
         <RelativeLayout
             android:layout_width="match_parent"
