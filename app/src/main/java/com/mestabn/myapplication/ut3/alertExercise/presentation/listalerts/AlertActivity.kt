@@ -5,20 +5,18 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mestabn.myapplication.R
 import com.mestabn.myapplication.databinding.ActivityAlertBinding
-import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
 import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
-import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertUseCase
 import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertsUseCase
-import com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionalerts.DescriptionAlertViewModel
+
 
 class AlertActivity : AppCompatActivity() {
 
@@ -46,7 +44,9 @@ class AlertActivity : AppCompatActivity() {
         setupViewBinding()
         setupViewRecycler()
         setupViewToolbar()
-        getAlerts()
+        setupViewStateObservers()
+        viewModel.loadAlerts()
+
     }
 
     private fun setupViewBinding() {
@@ -64,14 +64,14 @@ class AlertActivity : AppCompatActivity() {
         supportActionBar?.title = "Avisos"
     }
 
-    private fun getAlerts() {
-        Thread {
-            val alerts = viewModel.getAlerts()
-            runOnUiThread {
-                alertAdapter.setItems(alerts)
-            }
-        }.start()
+
+    private fun setupViewStateObservers() {
+        val alertObserver = Observer<List<AlertViewState>> {
+            alertAdapter.setItems(it)
+        }
+        viewModel.alertViewState.observe(this, alertObserver)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater

@@ -2,10 +2,7 @@ package com.mestabn.myapplication.ut3.alertExercise.presentation.descriptionaler
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -13,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
+import androidx.lifecycle.Observer
 import com.mestabn.myapplication.R
 import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
 import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
@@ -20,6 +18,7 @@ import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource
 import com.mestabn.myapplication.ut3.alertExercise.domain.GetAlertUseCase
+import com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts.AlertViewState
 
 class DescriptionAlertActivity : AppCompatActivity() {
 
@@ -43,7 +42,8 @@ class DescriptionAlertActivity : AppCompatActivity() {
     private fun setupView() {
         setupViewBinding()
         setupViewToolbar()
-        loadAlert()
+        setupViewObservers()
+        viewModelDescriptionAlert.loadAlert(getAlertId())
     }
 
     private fun setupViewBinding() {
@@ -56,21 +56,24 @@ class DescriptionAlertActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun loadAlert() = Thread {
-        val alert = viewModelDescriptionAlert.getAlert(getAlertId())
-        runOnUiThread {
-            if (alert != null) {
-                bind.titleAlertDescription.text = alert.title
-                bind.fileOne.text = alert.files[0].name
-                bind.fileOne.visibility = View.VISIBLE
-                bind.secondFile.visibility = View.GONE
-                bind.contentFilesDescription.text =
-                    HtmlCompat.fromHtml(alert.body, HtmlCompat.FROM_HTML_MODE_LEGACY);
-            }
+    private fun setupViewObservers() {
+        val nameObserver = Observer<AlertViewState> { alert ->
+            loadAlert(alert)
         }
-    }.start()
+        viewModelDescriptionAlert.alertViewState.observe(this, nameObserver)
+    }
 
-    private fun getAlertId(): String {
+    private fun loadAlert(alertViewState: AlertViewState) {
+        bind.titleAlertDescription.text = alertViewState.title
+        bind.fileOne.text = alertViewState.files[0].name
+        bind.fileOne.visibility = View.VISIBLE
+        bind.secondFile.visibility = View.GONE
+        bind.contentFilesDescription.text =
+            HtmlCompat.fromHtml(alertViewState.body, HtmlCompat.FROM_HTML_MODE_LEGACY);
+    }
+
+
+    fun getAlertId(): String {
         return intent.extras!!.getString(KEY_ALERT_ID, "0")
     }
 

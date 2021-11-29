@@ -6,13 +6,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 interface ApiClient {
-    fun getAlerts(): List<AlertApiModel>
-    fun getAlert(alertId: String): DescriptionAlertApiModel?
+   suspend fun getAlerts(): List<AlertApiModel>
+   suspend fun getAlert(alertId: String): DescriptionAlertApiModel?
 }
 
 class MockApiAlerts : ApiClient {
 
-    override fun getAlerts(): List<AlertApiModel> =
+    override suspend fun getAlerts(): List<AlertApiModel> =
         mutableListOf(
             AlertApiModel(
                 "1", "Titulo 1", "Resumen alerta 1", "1", "2021-01-10"
@@ -31,7 +31,7 @@ class MockApiAlerts : ApiClient {
             )
         )
 
-    override fun getAlert(alertId: String): DescriptionAlertApiModel {
+    override suspend fun getAlert(alertId: String): DescriptionAlertApiModel {
         return DescriptionAlertApiModel(
             "1",
             "Titulo 1",
@@ -66,9 +66,8 @@ class RetrofitApiAlerts : ApiClient {
         .build()
 
 
-    override fun getAlerts(): List<AlertApiModel> {
-        val call = apiEndPoint.getAlerts()
-        val response = call.execute()
+    override suspend fun getAlerts(): List<AlertApiModel> {
+        val response = apiEndPoint.getAlerts()
         return if (response.isSuccessful) {
             response.body()?.data ?: mutableListOf()
 
@@ -77,9 +76,8 @@ class RetrofitApiAlerts : ApiClient {
         }
     }
 
-    override fun getAlert(alertId: String): DescriptionAlertApiModel? {
-        val call = apiEndPoint.getAlert(alertId)
-        val response = call.execute()
+    override suspend fun getAlert(alertId: String): DescriptionAlertApiModel? {
+        val response = apiEndPoint.getAlert(alertId)
         return if (response.isSuccessful) {
             response.body()?.data
         } else {
