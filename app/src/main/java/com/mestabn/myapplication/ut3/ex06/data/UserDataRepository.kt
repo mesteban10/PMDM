@@ -10,14 +10,11 @@ class UserDataRepository(
         return localSource.findAll()
     }
 
-    override fun save(alertId: String) {
-        TODO("Not yet implemented")
+    override fun save(player: UserModel) {
+        localSource.save(player)
     }
 
-    /* override fun save(userName: String) {
-         userName.map { elemet -> UserModel(it.ma) }
-         val user = localSource.save(userName)
-     }*/
+
 
 
 }

@@ -91,32 +91,28 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/demarcation_person_title">
 
-            <androidx.appcompat.widget.AppCompatCheckBox
+            <CheckBox
                 android:id="@+id/checkbox_goalie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnCheckBoxClicked"
                 android:text="Portero" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_fender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnCheckBoxClicked"
                 android:text="Defensa" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_midfielder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnCheckBoxClicked"
                 android:text="Medio Centro" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_leading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="OnCheckBoxClicked"
                 android:text="Delantero" />
         </LinearLayout>
 

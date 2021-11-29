@@ -6,7 +6,7 @@ import com.mestabn.myapplication.ut3.ex06.domain.UserModel
 import java.io.File
 
 class UserFileLocalSource(
-    private val context: Context,
+    private val context: Context?,
     private val serializer: JsonSerializer
 ) : UserLocalSource {
 
@@ -32,7 +32,7 @@ class UserFileLocalSource(
 
 
     private fun getFile(fileName: String): File {
-        val file = File(context.filesDir, fileName)
+        val file = File(context?.filesDir, fileName)
         if (!file.exists()) {
             file.createNewFile()
         }

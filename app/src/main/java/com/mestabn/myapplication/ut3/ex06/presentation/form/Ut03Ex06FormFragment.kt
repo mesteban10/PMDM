@@ -1,25 +1,35 @@
 package com.mestabn.myapplication.ut3.ex06.presentation.form
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import androidx.core.view.get
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
 import com.mestabn.myapplication.R
+import com.mestabn.myapplication.commons.serializer.GsonSerializer
 import com.mestabn.myapplication.databinding.FragmentUt03Ex06FormBinding
 import com.mestabn.myapplication.ut3.ex06.data.UserDataRepository
 import com.mestabn.myapplication.ut3.ex06.data.UserFileLocalSource
-import com.mestabn.myapplication.ut3.ex06.data.UserLocalSource
-import com.mestabn.myapplication.ut3.ex06.domain.UserRepository
 import com.mestabn.myapplication.ut3.ex06.domain.form.SavePLayerUseCase
 
-class Ut03Ex06FormFragment : Fragment() {
+class Ut03Ex06FormFragment() : Fragment() {
 
     private lateinit var binding: FragmentUt03Ex06FormBinding
 
-    private val savePlayerUseCase: SavePLayerUseCase = SavePLayerUseCase(UserDataRepository((UserFileLocalSource(this, Js))))
+    private val savePlayerUseCase: SavePLayerUseCase = SavePLayerUseCase(
+        UserDataRepository(
+            (UserFileLocalSource(
+                context, GsonSerializer(
+                    Gson()
+                )
+            ))
+        )
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,16 +40,52 @@ class Ut03Ex06FormFragment : Fragment() {
         return binding.root
     }
 
-    fun savePlayer(){
-        val name = binding.namePersonForm.text
-        val surname = binding.surnamePersonForm.text
-        val region = binding.comunityPersonForm.onItemSelectedListener
-        val demarcation = onCheckboxClicked(binding.demarcationOptions)
-       savePlayerUseCase.Param("name","suername")
+    @SuppressLint("WrongConstant")
+    fun savePlayer() {
+        val name = binding.namePersonForm.text?.get(1)
+        val surname = binding.surnamePersonForm.text.toString()
+        val region = binding.comunityPersonForm.onItemSelectedListener.toString()
+        val gender = onCheckboxRadioButtomClicked(binding.radioWoman, binding.radioMan).toString()
+        val demarcation = onCheckboxClicked(binding.demarcationOptions).toString()
+        binding.buttonSave.setOnClickListener {
+            savePlayerUseCase.execute(
+                SavePLayerUseCase.Param(
+                    name,
+                    surname,
+                    region,
+                    demarcation,
+                    gender
+                )
+            )
+
+           // clearAll()
+
+        }
     }
 
-    fun onViewCreate(){
+   /* private fun clearAll(){
+        binding.namePersonForm.text.toString() = " "
+        val surname = binding.surnamePersonForm.text.toString()
+        val region = binding.comunityPersonForm.onItemSelectedListener.toString()
+        val gender = onCheckboxRadioButtomClicked(binding.radioWoman, binding.radioMan).toString()
+        val demarcation = onCheckboxClicked(binding.demarcationOptions).toString()
+    }*/
 
+    private fun onCheckboxRadioButtomClicked(view: View, view2: View) {
+        if (view is CheckBox) {
+            val checkedMan: Boolean = view.isChecked
+
+            when (view.id) {
+                R.id.checkbox_goalie -> {
+                    if (checkedMan) {
+                        binding.radioMan.text
+                    } else {
+                        binding.radioWoman.text
+                    }
+                }
+
+            }
+        }
     }
 
     private fun onCheckboxClicked(view: View) {
@@ -49,31 +95,25 @@ class Ut03Ex06FormFragment : Fragment() {
             when (view.id) {
                 R.id.checkbox_goalie -> {
                     if (checked) {
-                        savePlayerUseCase
+                        binding.checkboxGoalie.text
                     }
                 }
                 R.id.checkbox_fender -> {
                     if (checked) {
-                        // Cheese me
-                    } else {
-                        // I'm lactose intolerant
-                    }
-                } R.id.checkbox_leading -> {
-                    if (checked) {
-                        // Cheese me
-                    } else {
-                        // I'm lactose intolerant
+                        binding.checkboxFender.text
                     }
                 }
                 R.id.checkbox_leading -> {
                     if (checked) {
-                        // Cheese me
-                    } else {
-                        // I'm lactose intolerant
+                        binding.checkboxLeading.text
                     }
                 }
+                R.id.checkbox_midfielder -> {
+                    if (checked) {
+                        binding.checkboxMidfielder.text
+                    }
 
-                // TODO: Veggie sandwich
+                }
             }
         }
     }

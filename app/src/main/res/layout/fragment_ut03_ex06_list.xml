@@ -16,14 +16,14 @@
         android:layout_height="wrap_content"
         card_view:layout_constraintTop_toBottomOf="@id/view_custom_toolbar"
         android:visibility="visible"
-        />
-
+        >
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_users_form"
         android:layout_width="match_parent"
         card_view:layout_constraintTop_toBottomOf="@id/view_custom_toolbar"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_list_form" />
+    </FrameLayout>
 
 
 
