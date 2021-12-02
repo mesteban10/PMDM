@@ -54,7 +54,7 @@ class Ut03Ex06Activity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.main_menu, menu)
+        inflater.inflate(R.menu.fragment_menu, menu)
         return true
     }
 
@@ -74,9 +74,9 @@ class Ut03Ex06Activity : AppCompatActivity() {
                     )
                     updateToolbarTitle("Lista")
                 } else {
-                    replaceFragment(
-                        binding.containerFragment.id, fragment
-                    )
+                    //replaceFragment(
+                    //    binding.containerFragment.id, fragment
+                    //)
 
                     updateToolbarTitle("Formulario")
                 }

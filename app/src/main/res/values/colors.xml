@@ -20,4 +20,17 @@
     <color name="secondaryDarkColor">#aeaeae</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
+    <!-- Colores para estilo toolbar de alertas -->
+    <color name="primaryColorAlerta">#558b2f</color>
+    <color name="primaryLightColorAlerta">#85bb5c</color>
+    <color name="primaryDarkColorAlerta">#255d00</color>
+    <color name="secondaryColorAlerta">#fbc02d</color>
+    <color name="secondaryLightColorAlerta">#fff263</color>
+    <color name="secondaryDarkColorAlerta">#c49000</color>
+    <color name="primaryTextColorAlerta">#000000</color>
+    <color name="secondaryTextColorAlerta">#000000</color>
+
+    <color name="gold_100">#FF9800</color>
+    <color name="black_53">#86000000</color>
+    <color name="purple_100">#4A148C</color>
 </resources>
