@@ -1,6 +1,6 @@
 package com.mestabn.myapplication.ut3.alertExercise.domain
 
-data class AlertModel (
+data class AlertModel(
     val id: String,
     val title: String,
     val type: Int,
@@ -10,3 +10,7 @@ data class AlertModel (
     val source: String,
     val files: List<FileModel>
 )
+
+
+
+

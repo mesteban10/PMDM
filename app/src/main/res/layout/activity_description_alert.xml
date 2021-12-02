@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <include
+        android:id="@+id/view_custom_toolbar"
+        layout="@layout/view_custom_toolbar" />
+
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_second_activity"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_elements_details_alert"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_alert_description"
+                android:layout_width="@dimen/width_title_detail_alerts"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_elements_details_alert"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon_alert"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/title_text_description_alert" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/files_title"
+                style="@style/MarginStartAndPaddingTopTitlesDetailsAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/files_download"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/icon_alert"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:id="@+id/separator_first_files"
+                style="@style/LineSeparatorMarginAndHeight"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/files_title"
+                tools:ignore="MissingConstraints" />
+
+            <TableLayout
+                android:id="@+id/list_files"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_top_table_files_detail_alert"
+                android:padding="@dimen/padding_elements_details_alert"
+                android:stretchColumns="0,2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_first_files">
+
+                <TableRow android:background="@drawable/border_table">
+
+                    <TextView
+                        android:id="@+id/file_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/padding_elements_details_alert"
+                        android:text="@string/table_col1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:padding="@dimen/padding_elements_details_alert"
+                        android:src="@drawable/ic_pdf" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/second_file"
+                    android:background="@drawable/border_table">
+
+                    <TextView
+                        android:id="@+id/file_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/padding_elements_details_alert"
+                        android:text="@string/table_col1" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:padding="@dimen/padding_elements_details_alert"
+                        android:src="@drawable/ic_pdf" />
+                </TableRow>
+            </TableLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/alert_content_title"
+                style="@style/MarginStartAndPaddingTopTitlesDetailsAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/content_alert"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/list_files"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:id="@+id/separator_second_content_alert"
+                style="@style/LineSeparatorMarginAndHeight"
+                android:layout_width="match_parent"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alert_content_title"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/content_files_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_elements_details_alert"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_second_content_alert"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

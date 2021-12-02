@@ -1,13 +1,21 @@
 package com.mestabn.myapplication.ut3.alertExercise.data
 
-import com.mestabn.myapplication.ut3.alertExercise.app.ApiAlert
+import com.mestabn.myapplication.ut3.alertExercise.app.ApiClient
 import com.mestabn.myapplication.ut3.alertExercise.domain.AlertModel
 
-class AlertRemoteSource (private val apiClient: ApiAlert) {
+class AlertRemoteSource (private val apiAlert: ApiClient) {
 
     suspend fun getAlerts() : List<AlertModel>{
-        val apiModels = apiClient.getAlerts()
+        val apiModels = apiAlert.getAlerts()
         return apiModels.map { apimodel -> apimodel.toDomainModel()  }
+    }
+
+    suspend fun getAlert(alertId : String): AlertModel?{
+        val alertApiModel = apiAlert.getAlert(alertId)
+        if (alertApiModel != null) {
+            return alertApiModel.toDomainModel()
+        }
+        return null
     }
 
 }

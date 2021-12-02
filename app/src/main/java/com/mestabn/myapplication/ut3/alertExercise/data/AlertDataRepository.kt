@@ -7,4 +7,12 @@ class AlertDataRepository(private val remoteSource: AlertRemoteSource) : AlertRe
     override suspend fun getAlerts(): List<AlertModel> {
         return remoteSource.getAlerts()
     }
+
+    override suspend fun getAlert(alertId: String): AlertModel? {
+        return remoteSource.getAlert(alertId)
+    }
+
+
+
+
 }
