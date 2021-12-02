@@ -64,9 +64,8 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                val fragment = supportFragmentManager.findFragmentByTag("1")
-                Log.d("@dev", "${fragment?.tag}")
-                if (fragment?.tag == "1" && fragment.isVisible ) {
+                val fragmentTitle = supportActionBar?.title
+                if (fragmentTitle == getString(R.string.title_form) ) {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
@@ -80,6 +79,18 @@ class Ut03Ex06Activity : AppCompatActivity() {
                     updateToolbarTitle("Formulario")
                 }
 
+                true
+            }
+
+
+
+                if (supportActionBar?.title == getString(R.string.title_form)){
+                    replaceFragment(bindingActivity.containerFragment.id, Ut03Ex06ListFragment.createInstance())
+                    supportActionBar?.title = getString(R.string.title_list)
+                }else{
+                    replaceFragment(bindingActivity.containerFragment.id, Ut03Ex06FormFragment.createInstance())
+                    supportActionBar?.title = getString(R.string.title_form)
+                }
                 true
             }
 
