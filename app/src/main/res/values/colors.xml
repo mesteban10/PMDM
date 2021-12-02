@@ -11,4 +11,7 @@
     <color name="gray_100">#373535</color>
     <color name="dark_grey_100">#1C1C1C</color>
 
+    <color name="gold_100">#FF9800</color>
+    <color name="black_53">#86000000</color>
+    <color name="purple_100">#4A148C</color>
 </resources>

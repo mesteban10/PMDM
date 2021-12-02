@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ut3.UiActivity">
-
-    <include layout="@layout/view_wilbby_constraintlayout"/>
+    tools:context=".mvvm.presentation.MvvmActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

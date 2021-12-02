@@ -16,7 +16,7 @@
             android:exported="true" />
         <activity
             android:name=".ut3.ex02.presentation.Ut02Ex02Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ut3.alertExercise.presentation.AlertActivity"
             android:exported="true">
