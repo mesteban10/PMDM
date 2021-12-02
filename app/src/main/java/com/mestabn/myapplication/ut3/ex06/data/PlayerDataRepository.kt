@@ -1,11 +1,11 @@
 package com.mestabn.myapplication.ut3.ex06.data
 
 import com.mestabn.myapplication.ut3.ex06.domain.UserModel
-import com.mestabn.myapplication.ut3.ex06.domain.UserRepository
+import com.mestabn.myapplication.ut3.ex06.domain.PlayerRepository
 
-class UserDataRepository(
-    private val localSource: UserLocalSource,
-) : UserRepository {
+class PlayerDataRepository(
+    private val localSource: PlayerLocalSource,
+) : PlayerRepository {
     override fun fetchAll(): List<UserModel> {
         return localSource.findAll()
     }

@@ -27,7 +27,9 @@ class Ut03Ex06Activity : AppCompatActivity() {
 
     fun setupView(){
         setupViewBinding()
+        setupViewToolbar()
         setupFragment()
+
     }
 
 
@@ -35,13 +37,12 @@ class Ut03Ex06Activity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun setupFragment() {
-        setupViewToolbarForm()
-        addFragment(Ut03Ex06FormFragment.createInstance(), "1")
+    private fun setupViewToolbar() {
+        setSupportActionBar(binding.toolbar)
     }
 
-    private fun setupViewToolbarForm() {
-        setSupportActionBar(binding.toolbar)
+    private fun setupFragment() {
+        addFragment(Ut03Ex06FormFragment.createInstance(), "1")
     }
 
     private fun addFragment(fragment: Fragment, tag: String) {
@@ -63,15 +64,19 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                when (val fragment = supportFragmentManager) {
-                    fragment.findFragmentByTag("1") -> replaceFragment(
-                        binding.containerFragment.id,
-                        Ut03Ex06FormFragment.createInstance()
-                    )
-                    else -> replaceFragment(
+                val fragment = supportFragmentManager.findFragmentByTag("1")
+                 if (fragment != null && fragment.isVisible) {
+                    replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
                     )
+                    updateToolbarTitle("Lista")
+                } else {
+                    replaceFragment(
+                        binding.containerFragment.id,
+                        Ut03Ex06FormFragment.createInstance()
+                    )
+                    updateToolbarTitle("Formulario")
                 }
 
                 true

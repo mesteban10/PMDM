@@ -13,10 +13,7 @@ class Ut03Ex06ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         bind.namePerson.text = userViewState.name
         bind.regionPerson.text =userViewState.community
         bind.genderPerson.text  = userViewState.gender
-        bind.firstDemarcationPerson.text = userViewState.demarcation
-        bind.secondDemarcationPerson.text = userViewState.demarcation
-        bind.thirdDemarcationPerson.text = userViewState.demarcation
-        bind.fourthDemarcationPerson?.text = userViewState.demarcation
+
 
         }
     }

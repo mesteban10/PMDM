@@ -5,10 +5,10 @@ import com.mestabn.myapplication.commons.serializer.JsonSerializer
 import com.mestabn.myapplication.ut3.ex06.domain.UserModel
 import java.io.File
 
-class UserFileLocalSource(
+class PlayerFileLocalSource(
     private val context: Context,
     private val serializer: JsonSerializer
-) : UserLocalSource {
+) : PlayerLocalSource {
 
     /**
      * Obtengo un listado completo de alertas.
