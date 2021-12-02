@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Tamaño del texto -->
+    <dimen name="text_size_big">28sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <!-- Dimensiones layout ppal-->
+    <dimen name="image_height">180dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="margin_end">10dp</dimen>
+    <dimen name="margin_start">10dp</dimen>
+
+    <!-- Dimensiones offer_text-->
+    <dimen name="margin_start_offer">6dp</dimen>
+    <dimen name="margin_top_offer">6dp</dimen>
+    <dimen name="padding_left_offer">20dp</dimen>
+    <dimen name="padding_right_offer">20dp</dimen>
+
+    <dimen name="padding_general">4dp</dimen>
+
+    <dimen name="padding_review">6dp</dimen>
+
+    <dimen name="margin_bottom_time_del">10dp</dimen>
     <!-- Tamaño miniaturas -->
     <dimen name="thumbnails_width">30dp</dimen>
     <dimen name="thumbnails_height">50dp</dimen>
 
     <!-- Tamaño imagenes -->
-    <dimen name="image_height">100dp</dimen>
     <dimen name="image_width">60dp</dimen>
     <dimen name="image2_height">150dp</dimen>
     <dimen name="image2_width">120dp</dimen>
 
 
     <!-- Tamaños en sp -->
-    <dimen name="text_size_big">18sp</dimen>
     <dimen name="text_size_medium">12sp</dimen>
-    <dimen name="text_size_small">10sp</dimen>
 
     <!-- Tamaño icono check y download-->
     <dimen name="icon_width">20dp</dimen>

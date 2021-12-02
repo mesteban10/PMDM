@@ -29,4 +29,11 @@
     <string name="content_title1">Populares en Netflix</string>
     <string name="content_title2">Tendencias</string>
     <string name="content_title3">Verlo nuevamente</string>
+    <string name="offer_name">Oferta</string>
+    <string name="restaurant_name">Golden Rock and Beer</string>
+    <string name="food_name">Hamburguesas</string>
+    <string name="delivery_time">20-30\'</string>
+    <string name="new_restaurant">Nuevo</string>
+    <string name="delivery_price">1.99 €</string>
+    <string name="punctuation_restaurant">0.0</string>
 </resources>
