@@ -14,21 +14,16 @@ class UiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.d("@dev", "onCreate")
         setContentView(R.layout.activity_ui)
-
-
         setupView()
-        /*
         //Declaro variable de tipo inmutable del tipo AppCompatImageView y la inicializo buscando la imagen en el activity_main.xml
         val imageLion : AppCompatImageView = findViewById(R.id.lion_image) //Busco en la vista del Main y lo guardo en variable
         //val imageLion = findViewById<AppCompatImageView>(R.id.lion_image) //Otra forma de declararlo
 
         //imageLion.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.lion_image)) //El contexto es la propia actividad, el this representa el Main Activity
-         imageLion.setImageResource(R.drawable.lion_image)*/
+         imageLion.setImageResource(R.drawable.lion_image)
 
     }
 
-
-    /*
    override fun onStart(){
         super.onStart()
         Log.d("@dev", "onStart")
@@ -50,10 +45,8 @@ class UiActivity : AppCompatActivity() {
         super.onStop()
         Log.d("@dev", "OnStop")
     }
-*/
 
     private fun setupView() {
-
         setText()
         setImage()
     }
@@ -97,8 +90,6 @@ class UiActivity : AppCompatActivity() {
         icLike.setImageResource(R.drawable.ic_like_heart)
 
     }
-
-
 
 
 }
