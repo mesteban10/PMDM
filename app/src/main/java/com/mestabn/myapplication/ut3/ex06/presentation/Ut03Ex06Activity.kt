@@ -1,6 +1,7 @@
 package com.mestabn.myapplication.ut3.ex06.presentation
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -65,7 +66,8 @@ class Ut03Ex06Activity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
                 val fragment = supportFragmentManager.findFragmentByTag("1")
-                 if (fragment != null && fragment.isVisible) {
+                Log.d("@dev", "${fragment?.tag}")
+                if (fragment?.tag == "1" && fragment.isVisible ) {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
@@ -73,9 +75,9 @@ class Ut03Ex06Activity : AppCompatActivity() {
                     updateToolbarTitle("Lista")
                 } else {
                     replaceFragment(
-                        binding.containerFragment.id,
-                        Ut03Ex06FormFragment.createInstance()
+                        binding.containerFragment.id, fragment
                     )
+
                     updateToolbarTitle("Formulario")
                 }
 
