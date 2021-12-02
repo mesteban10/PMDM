@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/principal_view_bg_image"
+        style="@style/MainView"
+        android:layout_width="match_parent"
+        android:background="@drawable/burguer">
+
+        <TextView
+            android:id="@+id/text_offer"
+            style="@style/OfferText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/rounded_corner_bg_yellow"
+            tools:text="@string/offer_name" />
+
+        <RelativeLayout
+            android:id="@+id/restaurant_name_and_type_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/restaurant_name_text"
+                style="@style/NameRestaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowRadius="10.2"
+                tools:text="@string/restaurant_name" />
+
+            <TextView
+                android:id="@+id/type_food"
+                style="@style/FoodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/restaurant_name_text"
+                android:layout_centerInParent="true"
+                android:background="@color/black_53"
+                tools:text="@string/food_name" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/time_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_bg_black"
+            android:padding="6dp"
+            app:drawableLeftCompat="@drawable/ic_clock"
+            tools:text="@string/delivery_time" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/FootView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/principal_view_bg_image"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/like_icon"
+            style="@style/LikeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle_shape"
+            android:gravity="center"
+            android:src="@drawable/ic_like_heart" />
+
+        <TextView
+            android:id="@+id/description_restaurant"
+            style="@style/NuevoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/like_icon"
+            android:background="@drawable/rounded_corner_bg_purple"
+            tools:text="@string/new_restaurant" />
+
+        <TextView
+            android:id="@+id/price_delivery"
+            style="@style/RoundedFigureDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corner_shadow"
+            android:gravity="center"
+            app:drawableLeftCompat="@drawable/ic_delivery"
+            tools:text="@string/delivery_price" />
+
+        <TextView
+            android:id="@+id/restaurant_punctuation"
+            style="@style/RoundedFigureReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/price_delivery"
+            android:background="@drawable/rounded_corner_shadow"
+            android:gravity="center"
+            app:drawableLeftCompat="@drawable/ic_star"
+            tools:text="@string/punctuation_restaurant" />
+
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

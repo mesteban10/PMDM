@@ -1,4 +1,47 @@
 <resources>
-    <string name="app_name">PMPD-PlayGround</string>
+    <string name="app_name">Alertas</string>
     <string name="name_image">Nombre de la imagen</string>
+    <string name="table_col1">Columna 1</string>
+    <string name="table_col2">Columna 2</string>
+    <string name="table_col3">Columna 3</string>
+    <string name="action_button">Botón</string>
+    <!-- Texto de la cabecera -->
+    <string name="head_text">Autodescargas</string>
+    <!-- Nombres de los usuarios -->
+    <string name="user1_name">Alex</string>
+    <string name="user2_name">Glenn</string>
+    <string name="user3_name">Niños</string>
+    <!-- Texto de los títulos de las películas/series -->
+    <string name="title1_name">YOU</string>
+    <string name="title2_name">The Umbrella Academy</string>
+    <string name="title3_name">Élite</string>
+    <string name="title4_name">Los hermanos Willoughby</string>
+    <!-- Texto de la descripción de las descargas  -->
+    <string name="description01">2 episodios | 1.5GB</string>
+    <string name="description02">3 episodios | 1.7GB</string>
+    <string name="description03">4 episodios | 2.3GB</string>
+    <string name="description04">1 h 32 min | 1GB</string>
+    <!--Títulos de la barra header netf2 -->
+    <string name="title_header_1">Programas</string>
+    <string name="title_header_2">Películas</string>
+    <string name="title_header_3">Mi lista</string>
+    <!-- Títulos del contenido por géneros de las películas-->
+    <string name="content_title1">Populares en Netflix</string>
+    <string name="content_title2">Tendencias</string>
+    <string name="content_title3">Verlo nuevamente</string>
+    <string name="offer_name">Oferta</string>
+    <string name="restaurant_name">Golden Rock and Beer</string>
+    <string name="food_name">Hamburguesas</string>
+    <string name="delivery_time">20-30\'</string>
+    <string name="new_restaurant">Nuevo</string>
+    <string name="delivery_price">1.99 €</string>
+    <string name="punctuation_restaurant">0.0</string>
+    <string name="avisos_text">Avisos</string>
+    <string name="title_text">Recomendaciones de manejo Periodo estival 2021</string>
+    <string name="date_text">21/06/2021</string>
+    <string name="description_text">Recomendaciones de manejo. Periodo estival 2021 Junio de 2021. Para agricultores cosecha y post-cosechacosechar lo mas superficial posible.</string>
+    <string name="label_second_activity">Segunda Actividad</string>
+    <string name="title_text_description_alert">Recomendaciones de manejo</string>
+    <string name="files_download">Ficheros Descargables</string>
+    <string name="content_alert">Contenido del aviso</string>
 </resources>

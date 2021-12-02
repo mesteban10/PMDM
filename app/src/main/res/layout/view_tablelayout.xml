@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+TableLayout posiciona sus elementos secundarios en filas y columnas.
+Los contenedores de TableLayout no muestran líneas de bordes para las filas,
+columnas o celdas.
+La tabla tendrá la misma cantidad de columnas que la fila con la mayor cantidad
+de celdas.
+Una tabla puede dejar celdas vacías.
+Las celdas pueden abarcar varias columnas, igual que en HTML.
+Puedes abarcar columnas si usas el campo span de la clase TableRow.LayoutParams.
+-->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TableLayout se asemeja a una tabla HTML donde TableRow serían los <TR> y
+         los TextView (u otro elementos) serían los <TD> -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!-- collapseColumns me permite ocultar la columna o columnas indicadas (separadas por comas) -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:collapseColumns="0,1">
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+
+            <TextView android:text="@string/table_col3" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+
+            <TextView android:text="@string/table_col3" />
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!-- strechColumns me permite expandir las columnas y ocupar el espacio existente -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!-- layout_column permite colocar la vista en una columna diferente -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:text="@string/table_col1" />
+
+            <TextView
+                android:layout_column="0"
+                android:text="@string/table_col2" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <!-- layout_column permite colocar la vista en una columna diferente -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow android:background="@drawable/border_table">
+
+            <TextView android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+
+            <TextView android:text="@string/table_col3" />
+        </TableRow>
+
+        <TableRow android:background="@drawable/border_table">
+
+            <TextView
+                android:layout_span="2"
+                android:text="@string/table_col1" />
+
+            <TextView android:text="@string/table_col2" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

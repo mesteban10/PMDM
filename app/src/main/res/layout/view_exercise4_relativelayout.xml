@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ut3.UiActivity"
+    >
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image01"
+        tools:text="@tools:sample/date/ddmmyy"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image01"
+        android:layout_below="@+id/text01"
+        tools:text="@tools:sample/lorem"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text02"
+        android:layout_toEndOf="@+id/image01"
+        tools:src="@tools:sample/avatars"
+        android:maxLines="5"
+        tools:text="@tools:sample/lorem/random" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="1.5dp"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/image01"
+        android:background="@color/black"/>
+
+
+
+
+</RelativeLayout>
+
+
+</LinearLayout>
