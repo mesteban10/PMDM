@@ -17,7 +17,7 @@ import com.mestabn.myapplication.ut3.ex06.data.PlayerFileLocalSource
 import com.mestabn.myapplication.ut3.ex06.domain.list.GetPlayerUseCase
 import com.mestabn.myapplication.ut3.ex06.presentation.form.Ut03Ex06FormFragment
 
-class Ut03Ex06ListFragment(private val context: AppCompatActivity) : Fragment() {
+class Ut03Ex06ListFragment : Fragment() {
 
     private lateinit var binding: FragmentUt03Ex06ListBinding
 
@@ -26,7 +26,7 @@ class Ut03Ex06ListFragment(private val context: AppCompatActivity) : Fragment() 
     private val viewModel: Ut03Ex06ViewModel = Ut03Ex06ViewModel(
         GetPlayerUseCase(
             PlayerDataRepository(
-                PlayerFileLocalSource(context, GsonSerializer(Gson()))
+                PlayerFileLocalSource(requireContext(), GsonSerializer(Gson()))
             )
         )
     )
@@ -65,7 +65,7 @@ class Ut03Ex06ListFragment(private val context: AppCompatActivity) : Fragment() 
 
     companion object {
         val TAG: String = Ut03Ex06FormFragment::class.java.simpleName
-        fun createInstance() = Ut03Ex06ListFragment(AppCompatActivity())
+        fun createInstance() = Ut03Ex06ListFragment()
     }
 
 }

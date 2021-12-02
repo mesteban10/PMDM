@@ -19,7 +19,6 @@ class Ut03Ex06Activity : AppCompatActivity() {
         ActivityUt03Ex06Binding.inflate(layoutInflater)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupView()
