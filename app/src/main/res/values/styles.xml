@@ -110,4 +110,40 @@
         <item name="android:layout_marginStart">@dimen/margin_start</item>
     </style>
 
+    <style name="MarginsInfo">
+        <item name="android:layout_marginTop">@dimen/margin_info</item>
+        <item name="android:layout_marginBottom">@dimen/margin_info</item>
+        <item name="android:layout_marginEnd">@dimen/margin_info</item>
+        <item name="android:layout_marginStart">@dimen/margin_info</item>
+    </style>
+
+    <style name="TextInfoAlert">
+        <item name="android:layout_marginStart">@dimen/margin_info</item>
+    </style>
+
+    <style name="VineyardImageHeight">
+        <item name="android:layout_height">@dimen/vineyard_image_height</item>
+    </style>
+
+    <style name="TextAvisosPadding">
+        <item name="android:padding">@dimen/padding_text_avisos</item>
+    </style>
+
+    <style name="CardViewAlerts">
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="cardCornerRadius">@dimen/corner_radious</item>
+    </style>
+
+    <style name="MarginStartAndPaddingTopTitlesDetailsAlert">
+        <item name="android:layout_marginStart">@dimen/margin_start_details_titles_alert</item>
+        <item name="android:paddingTop">@dimen/padding_top_details_title_alert</item>
+    </style>
+
+    <style name="LineSeparatorMarginAndHeight">
+        <item name="android:layout_margin">@dimen/margin_separator_details_alert</item>
+        <item name="android:layout_height">@dimen/height_separator_details_alert</item>
+    </style>
+
+
+
 </resources>

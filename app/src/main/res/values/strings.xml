@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PMPD-PlayGround</string>
+    <string name="app_name">Alertas</string>
     <string name="name_image">Nombre de la imagen</string>
     <string name="table_col1">Columna 1</string>
     <string name="table_col2">Columna 2</string>
@@ -36,4 +36,12 @@
     <string name="new_restaurant">Nuevo</string>
     <string name="delivery_price">1.99 €</string>
     <string name="punctuation_restaurant">0.0</string>
+    <string name="avisos_text">Avisos</string>
+    <string name="title_text">Recomendaciones de manejo Periodo estival 2021</string>
+    <string name="date_text">21/06/2021</string>
+    <string name="description_text">Recomendaciones de manejo. Periodo estival 2021 Junio de 2021. Para agricultores cosecha y post-cosechacosechar lo mas superficial posible.</string>
+    <string name="label_second_activity">Segunda Actividad</string>
+    <string name="title_text_description_alert">Recomendaciones de manejo</string>
+    <string name="files_download">Ficheros Descargables</string>
+    <string name="content_alert">Contenido del aviso</string>
 </resources>
