@@ -13,7 +13,6 @@ import androidx.core.text.HtmlCompat
 import androidx.lifecycle.Observer
 import com.mestabn.myapplication.R
 import com.mestabn.myapplication.databinding.ActivityDescriptionAlertBinding
-import com.mestabn.myapplication.ut3.alertExercise.app.MockApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.app.RetrofitApiAlerts
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertDataRepository
 import com.mestabn.myapplication.ut3.alertExercise.data.AlertRemoteSource

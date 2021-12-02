@@ -21,4 +21,7 @@
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#000000</color>
 
+    <color name="gold_100">#FF9800</color>
+    <color name="black_53">#86000000</color>
+    <color name="purple_100">#4A148C</color>
 </resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/principal_view_bg_image"
+        style="@style/MainView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/burguer">
+
+
+        <TextView
+            android:id="@+id/text_offer"
+            style="@style/OfferText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_bg_yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/offer_name" />
+
+        <TextView
+            android:id="@+id/text_name_restaurant"
+            style="@style/NameRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="@id/text_offer"
+            app:layout_constraintTop_toBottomOf="@id/text_offer"
+            tools:text="@string/restaurant_name" />
+
+        <TextView
+            android:id="@+id/text_type_food"
+            style="@style/FoodType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_53"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="@id/text_name_restaurant"
+            app:layout_constraintTop_toBottomOf="@id/text_name_restaurant"
+            tools:text="@string/food_name" />
+
+        <TextView
+            android:id="@+id/text_time_delivery"
+            style="@style/RoundedFigureTimeDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_bg_black"
+            app:drawableLeftCompat="@drawable/ic_clock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/text_name_restaurant"
+            tools:text="@string/delivery_time" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/FootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/principal_view_bg_image"
+        app:layout_constraintTop_toBottomOf="@id/principal_view_bg_image">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_like"
+            style="@style/LikeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_shape"
+            android:src="@drawable/ic_like_heart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_nuevo"
+            style="@style/NuevoView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/rounded_corner_bg_purple"
+            app:layout_constraintLeft_toRightOf="@id/ic_like"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/new_restaurant" />
+
+        <TextView
+            android:id="@+id/price_delivery"
+            style="@style/RoundedFigureDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_shadow"
+            app:drawableLeftCompat="@drawable/ic_delivery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/text_nuevo"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/delivery_price" />
+
+        <TextView
+            android:id="@+id/restaurant_punctuation"
+            style="@style/RoundedFigureReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_shadow"
+            app:drawableLeftCompat="@drawable/ic_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/price_delivery"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/punctuation_restaurant" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
