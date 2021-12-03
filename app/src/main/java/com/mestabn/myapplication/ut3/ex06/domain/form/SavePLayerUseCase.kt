@@ -5,8 +5,8 @@ import com.mestabn.myapplication.ut3.ex06.domain.PlayerModel
 
 class SavePlayerUseCase(private val playerRepository: PlayerRepository) {
 
-    fun execute(param: Param) {
-        playerRepository.save(param.toModel())
+    fun execute(param: List<Param>) {
+        playerRepository.save(param.map { param -> param.toModel()  })
 
     }
 

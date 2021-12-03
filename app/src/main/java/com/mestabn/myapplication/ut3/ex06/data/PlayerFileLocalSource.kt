@@ -11,29 +11,33 @@ class PlayerFileLocalSource(
     private val serializer: JsonSerializer
 ) : PlayerLocalSource {
 
-    /**
-     * Obtengo un listado completo de alertas.
-     */
+    private val playerFile: File by lazy { getFile() }
+
     override suspend fun findAll(): List<PlayerModel> = with(Dispatchers.IO) {
-        val alerts: MutableList<PlayerModel> = mutableListOf()
-        val file = getFile(playerS_FILENAME)
-        val lines = file.readLines()
-        lines.map { line ->
-            val alertModel = serializer.fromJson(line, PlayerModel::class.java)
-            alerts.add(alertModel)
+        val players: MutableList<PlayerModel> = mutableListOf()
+        val fileLines = playerFile.readLines()
+        fileLines.map { file ->
+            val playerModel = serializer.fromJson(file, PlayerModel::class.java)
+            players.add(playerModel)
         }
-        return alerts
+        return players
     }
 
 
-    override fun save(player: PlayerModel) {
-        val file = getFile(getplayerDetailFileName(player.name))
-        file.writeText(serializer.toJson(player, PlayerModel::class.java))
+    override fun save(players: List<PlayerModel>) {
+        players.map { customerModel ->
+            playerFile.appendText(
+                serializer.toJson(
+                    customerModel,
+                    PlayerModel::class.java
+                ) + System.lineSeparator()
+            )
+        }
     }
 
 
-    private fun getFile(fileName: String): File {
-        val file = File(context.filesDir, fileName)
+    private fun getFile(): File {
+        val file = File(context.filesDir, PLAYERS_FILENAME)
         if (!file.exists()) {
             file.createNewFile()
         }
@@ -41,7 +45,7 @@ class PlayerFileLocalSource(
     }
 
     companion object {
-        const val playerS_FILENAME: String = "pmdm_players.txt"
+        const val PLAYERS_FILENAME: String = "pmdm_players.txt"
         fun getplayerDetailFileName(playerName: String): String = "pmdm_detail_$playerName.txt"
     }
 }

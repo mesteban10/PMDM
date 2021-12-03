@@ -62,13 +62,13 @@ class Ut03Ex06FormFragment : Fragment() {
 
     }
 
-    fun savePlayer(): SavePlayerUseCase.Param {
+    fun savePlayer(): List<SavePlayerUseCase.Param> {
         val name = binding.namePersonForm.text.toString()
         val surname = binding.surnamePersonForm.text.toString()
         val region = binding.comunityPersonForm.selectedItem.toString()
         val demarcation = onCheckboxClicked()
         val gender = onRadioButtomClicked()
-        return SavePlayerUseCase.Param(name, surname, region, gender, demarcation)
+        return mutableListOf(SavePlayerUseCase.Param(name, surname, region, gender, demarcation))
     }
 
 
@@ -85,9 +85,9 @@ class Ut03Ex06FormFragment : Fragment() {
     private fun onRadioButtomClicked(): String {
         var gender: String = ""
         gender = if (binding.radioMan.isChecked) {
-            "Mujer"
-        } else {
             "Hombre"
+        } else {
+            "Mujer"
         }
         return gender
     }

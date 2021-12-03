@@ -51,4 +51,14 @@
     <!-- Formulario -->
     <string name="clean_form_items"> </string>
     <string name="clear">\" \"</string>
+    <string name="name_player_form">Nombre</string>
+    <string name="surname_player_form">Apellidos</string>
+    <string name="community_player_form">Comunity</string>
+    <string name="woman_gender">Mujer</string>
+    <string name="man_gender">Varón</string>
+    <string name="button_search">Guardar</string>
+    <string name="leading_player">Delantero</string>
+    <string name="midfielder_player">Medio Centro</string>
+    <string name="fender_player">Defensa</string>
+    <string name="goalie_player">Portero</string>
 </resources>

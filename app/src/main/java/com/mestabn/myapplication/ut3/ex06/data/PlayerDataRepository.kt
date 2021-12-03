@@ -10,8 +10,8 @@ class PlayerDataRepository(
         return localSource.findAll()
     }
 
-    override fun save(player: PlayerModel) {
-        localSource.save(player)
+    override fun save(players: List<PlayerModel>)  {
+        localSource.save(players)
     }
 
 

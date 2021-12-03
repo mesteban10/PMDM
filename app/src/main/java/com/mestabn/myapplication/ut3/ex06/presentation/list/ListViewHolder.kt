@@ -14,10 +14,8 @@ class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         bind.namePerson.text = playerViewState.name + playerViewState.surname
         bind.regionPerson.text = playerViewState.community
         bind.genderPerson.text = playerViewState.gender
-        bind.firstDemarcationPerson.text = playerViewState.demarcation.toString()
-        bind.secondDemarcationPerson.text = playerViewState.demarcation.toString()
-        bind.thirdDemarcationPerson.text = playerViewState.demarcation.toString()
-        bind.fourthDemarcationPerson.text = playerViewState.demarcation.toString()
+        bind.firstDemarcationPerson.text = playerViewState.demarcation?.toString()
+
 
 
     }

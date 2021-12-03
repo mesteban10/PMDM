@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="3dp"
+    app:cardCornerRadius="@dimen/corner_radious"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_card_view_form">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/user_data_form"

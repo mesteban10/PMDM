@@ -10,7 +10,7 @@ class PlayerMockLocalSource : PlayerLocalSource {
         )
     }
 
-    override fun save(player: PlayerModel) {
+    override  fun save(players: List<PlayerModel>)  {
         PlayerModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf())
     }
 

@@ -10,7 +10,7 @@ import com.mestabn.myapplication.ut3.ex06.domain.form.SavePlayerUseCase
 
 
 class FormViewModel(private val savePLayerUseCase: SavePlayerUseCase) : ViewModel() {
-    fun savePlayer(param: SavePlayerUseCase.Param) {
+    fun savePlayer(param: List<SavePlayerUseCase.Param>) {
         savePLayerUseCase.execute(param)
     }
 

@@ -8,7 +8,7 @@ import com.mestabn.myapplication.ut3.ex06.domain.list.GetPlayerUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ListViewModel(private val getplayersUseCase: GetPlayerUseCase): ViewModel() {
+class ListViewModel(private val getplayersUseCase: GetPlayerUseCase) : ViewModel() {
 
     val playerViewState: LiveData<List<PlayerListViewState>>
         get() = _playersViewState
@@ -20,7 +20,15 @@ class ListViewModel(private val getplayersUseCase: GetPlayerUseCase): ViewModel(
 
     fun loadplayers() = viewModelScope.launch(Dispatchers.Main) {
         val players = getplayersUseCase.execute()
-        _playersViewState.value = players.map { PlayerListViewState(it.name, it.surnames, it.community, it.gender, it.demarcation) }
+        _playersViewState.value = players.map {
+            PlayerListViewState(
+                it.name,
+                it.surnames,
+                it.community,
+                it.gender,
+                it.demarcation,
+            )
+        }
     }
 
 }

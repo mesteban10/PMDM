@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mestabn.myapplication.R
@@ -44,6 +45,7 @@ class Ut03Ex06Activity : AppCompatActivity() {
     }
 
     private fun setupFragment() {
+        updateToolbarTitle("Formulario")
         addFragment(Ut03Ex06FormFragment.createInstance(), "1")
     }
 
@@ -66,32 +68,32 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                var fragment = 0
-                if (fragment == 0) {
+                if (supportActionBar?.title == "Formulario") {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
                     )
-                    fragment = 1
                     updateToolbarTitle("Listado")
                 } else {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06FormFragment.createInstance()
                     )
-                    fragment = 0
                     updateToolbarTitle("Formulario")
+
                 }
                 true
-            }
 
+            }
             android.R.id.home -> {
                 finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+
     }
+
 
     private fun replaceFragment(layoutId: Int, fragment: Fragment) {
         val fragmentTransition = supportFragmentManager.beginTransaction()
