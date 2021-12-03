@@ -2,7 +2,8 @@ package com.mestabn.myapplication.ut3.ex06.data
 
 import android.content.Context
 import com.mestabn.myapplication.commons.serializer.JsonSerializer
-import com.mestabn.myapplication.ut3.ex06.domain.UserModel
+import com.mestabn.myapplication.ut3.ex06.domain.PlayerModel
+import kotlinx.coroutines.Dispatchers
 import java.io.File
 
 class PlayerFileLocalSource(
@@ -13,21 +14,21 @@ class PlayerFileLocalSource(
     /**
      * Obtengo un listado completo de alertas.
      */
-    override fun findAll(): List<UserModel> {
-        val alerts: MutableList<UserModel> = mutableListOf()
-        val file = getFile(USERS_FILENAME)
+    override suspend fun findAll(): List<PlayerModel> = with(Dispatchers.IO) {
+        val alerts: MutableList<PlayerModel> = mutableListOf()
+        val file = getFile(playerS_FILENAME)
         val lines = file.readLines()
         lines.map { line ->
-            val alertModel = serializer.fromJson(line, UserModel::class.java)
+            val alertModel = serializer.fromJson(line, PlayerModel::class.java)
             alerts.add(alertModel)
         }
         return alerts
     }
 
 
-    override fun save(user: UserModel) {
-        val file = getFile(getUserDetailFileName(user.name))
-        file.writeText(serializer.toJson(user, UserModel::class.java))
+    override fun save(player: PlayerModel) {
+        val file = getFile(getplayerDetailFileName(player.name))
+        file.writeText(serializer.toJson(player, PlayerModel::class.java))
     }
 
 
@@ -40,7 +41,7 @@ class PlayerFileLocalSource(
     }
 
     companion object {
-        const val USERS_FILENAME: String = "pmdm_users.txt"
-        fun getUserDetailFileName(userName: String): String = "pmdm_detail_$userName.txt"
+        const val playerS_FILENAME: String = "pmdm_players.txt"
+        fun getplayerDetailFileName(playerName: String): String = "pmdm_detail_$playerName.txt"
     }
 }

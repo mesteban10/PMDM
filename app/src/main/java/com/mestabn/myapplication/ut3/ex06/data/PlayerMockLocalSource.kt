@@ -1,17 +1,17 @@
 package com.mestabn.myapplication.ut3.ex06.data
 
-import com.mestabn.myapplication.ut3.ex06.domain.UserModel
+import com.mestabn.myapplication.ut3.ex06.domain.PlayerModel
 
-class PlayerMockLocalSource : UserLocalSource {
-    override fun findAll(): List<UserModel> {
+class PlayerMockLocalSource : PlayerLocalSource {
+    override suspend fun findAll(): List<PlayerModel> {
         return mutableListOf(
-            UserModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf()),
-            UserModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf())
+            PlayerModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf()),
+            PlayerModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf())
         )
     }
 
-    override fun save(user: UserModel) {
-        UserModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf())
+    override fun save(player: PlayerModel) {
+        PlayerModel("Pepe", "E.M", "Madrid", "Masculino", mutableListOf())
     }
 
 }

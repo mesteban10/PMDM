@@ -6,31 +6,31 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mestabn.myapplication.R
 
 
-class Ut03Ex06Adapter : RecyclerView.Adapter<Ut03Ex06ViewHolder>() {
+class ListAdapter : RecyclerView.Adapter<ListViewHolder>() {
 
 
-    private val dataSet = mutableListOf<UserViewState>()
+    private val dataSet = mutableListOf<PlayerListViewState>()
 
 
-    fun setItems(items: List<UserViewState>) {
+    fun setItems(items: List<PlayerListViewState>) {
         dataSet.clear()
         addItems(items.toMutableList())
     }
 
-    private fun addItems(items: MutableList<UserViewState>) {
+    private fun addItems(items: MutableList<PlayerListViewState>) {
         dataSet.addAll(items)
         notifyDataSetChanged()
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Ut03Ex06ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_list_form, parent, false)
 
-        return Ut03Ex06ViewHolder(view)
+        return ListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: Ut03Ex06ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.render(dataSet[position])
     }
 

@@ -47,4 +47,8 @@
     <string name="name_person_form">Nombre</string>
     <string name="region_person_form">Región</string>
     <string name="gender_person_form">Gender</string>
+
+    <!-- Formulario -->
+    <string name="clean_form_items"> </string>
+    <string name="clear">\" \"</string>
 </resources>

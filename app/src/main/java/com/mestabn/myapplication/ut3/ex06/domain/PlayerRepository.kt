@@ -1,6 +1,8 @@
 package com.mestabn.myapplication.ut3.ex06.domain
 
+import com.mestabn.myapplication.ut3.ex06.domain.form.SavePlayerUseCase
+
 interface PlayerRepository {
-    fun fetchAll(): List<UserModel>
-    fun save(player: UserModel)
+    suspend fun fetchAll(): List<PlayerModel>
+    fun save(player: PlayerModel)
 }

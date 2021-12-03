@@ -17,12 +17,12 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/name_person"
-            android:layout_width="45dp"
-            android:layout_height="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="@dimen/padding_all_text_view_form"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="17dp"
+            tools:layout_editor_absoluteY="27dp"
             tools:text="@string/name_person_form" />
 
         <androidx.appcompat.widget.AppCompatTextView

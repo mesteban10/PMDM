@@ -91,7 +91,7 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/demarcation_person_title">
 
-            <CheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_goalie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

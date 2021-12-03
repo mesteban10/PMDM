@@ -1,10 +1,10 @@
 package com.mestabn.myapplication.ut3.ex06.data
 
-import com.mestabn.myapplication.ut3.ex06.domain.UserModel
+import com.mestabn.myapplication.ut3.ex06.domain.PlayerModel
 
 interface PlayerLocalSource {
 
-    fun findAll(): List<UserModel>
-    fun save(user: UserModel)
+   suspend fun findAll(): List<PlayerModel>
+    fun save(player: PlayerModel)
 
 }

@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mestabn.myapplication.R
 import com.mestabn.myapplication.databinding.ActivityUt03Ex06Binding
+import com.mestabn.myapplication.ut3.alertExercise.presentation.listalerts.AlertsAdapter
 import com.mestabn.myapplication.ut3.ex06.presentation.form.Ut03Ex06FormFragment
+import com.mestabn.myapplication.ut3.ex06.presentation.list.ListAdapter
 import com.mestabn.myapplication.ut3.ex06.presentation.list.Ut03Ex06ListFragment
 
 
@@ -25,19 +27,19 @@ class Ut03Ex06Activity : AppCompatActivity() {
 
     }
 
-    fun setupView(){
+
+    fun setupView() {
         setupViewBinding()
-        setupViewToolbar()
+        setupToolbar()
         setupFragment()
 
     }
-
 
     fun setupViewBinding() {
         setContentView(binding.root)
     }
 
-    private fun setupViewToolbar() {
+    private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
     }
 
@@ -64,32 +66,21 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                val fragmentTitle = supportActionBar?.title
-                if (fragmentTitle == getString(R.string.title_form) ) {
+                var fragment = 0
+                if (fragment == 0) {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
                     )
-                    updateToolbarTitle("Lista")
+                    fragment = 1
+                    updateToolbarTitle("Listado")
                 } else {
-                    //replaceFragment(
-                    //    binding.containerFragment.id, fragment
-                    //)
-
+                    replaceFragment(
+                        binding.containerFragment.id,
+                        Ut03Ex06FormFragment.createInstance()
+                    )
+                    fragment = 0
                     updateToolbarTitle("Formulario")
-                }
-
-                true
-            }
-
-
-
-                if (supportActionBar?.title == getString(R.string.title_form)){
-                    replaceFragment(bindingActivity.containerFragment.id, Ut03Ex06ListFragment.createInstance())
-                    supportActionBar?.title = getString(R.string.title_list)
-                }else{
-                    replaceFragment(bindingActivity.containerFragment.id, Ut03Ex06FormFragment.createInstance())
-                    supportActionBar?.title = getString(R.string.title_form)
                 }
                 true
             }
@@ -100,7 +91,6 @@ class Ut03Ex06Activity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-
     }
 
     private fun replaceFragment(layoutId: Int, fragment: Fragment) {
