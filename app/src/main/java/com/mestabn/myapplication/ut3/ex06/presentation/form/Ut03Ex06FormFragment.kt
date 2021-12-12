@@ -1,14 +1,10 @@
 package com.mestabn.myapplication.ut3.ex06.presentation.form
 
-import android.os.Build
 import android.os.Bundle
-import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.mestabn.myapplication.R
@@ -54,40 +50,54 @@ class Ut03Ex06FormFragment : Fragment() {
 
 
     fun setupView() {
-        binding.buttonSave.setOnClickListener {
-            viewModelForm.savePlayer(savePlayer())
+        binding.actionSave.setOnClickListener {
+          val newPlayer = viewModelForm.savePlayer(savePlayer())
             clearItems()
-            Toast.makeText(requireContext(), "Nuevo Jugador añadido", Toast.LENGTH_SHORT).show()
+            if (Result.success(newPlayer).isSuccess ){
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.new_player_adder),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }else{
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.error_new_player),
+                    Toast.LENGTH_SHORT).show()
+            }
+
+
+
         }
 
     }
 
-    fun savePlayer(): List<SavePlayerUseCase.Param> {
-        val name = binding.namePersonForm.text.toString()
-        val surname = binding.surnamePersonForm.text.toString()
-        val region = binding.comunityPersonForm.selectedItem.toString()
+    private fun savePlayer(): List<SavePlayerUseCase.Param> {
+        val name = binding.inputName.text.toString()
+        val surname = binding.inputSurname.text.toString()
+        val region = binding.listCommunity.selectedItem.toString()
         val demarcation = onCheckboxClicked()
         val gender = onRadioButtomClicked()
         return mutableListOf(SavePlayerUseCase.Param(name, surname, region, gender, demarcation))
     }
 
 
-    fun clearItems() {
-        binding.namePersonForm.text?.clear()
-        binding.surnamePersonForm.text?.clear()
+    private fun clearItems() {
+        binding.inputName.text?.clear()
+        binding.inputSurname.text?.clear()
         binding.selectGender.clearCheck()
-        binding.checkboxLeading.isChecked = false
-        binding.checkboxFender.isChecked = false
-        binding.checkboxGoalie.isChecked = false
-        binding.checkboxMidfielder.isChecked = false
+        binding.optionLeading.isChecked = false
+        binding.optionFender.isChecked = false
+        binding.optionGoalie.isChecked = false
+        binding.optionMidfielder.isChecked = false
     }
 
     private fun onRadioButtomClicked(): String {
         var gender: String = ""
-        gender = if (binding.radioMan.isChecked) {
-            "Hombre"
+        gender = if (binding.optionMan.isChecked) {
+           getString(R.string.man_gender)
         } else {
-            "Mujer"
+            getString(R.string.woman_gender)
         }
         return gender
     }
@@ -95,17 +105,17 @@ class Ut03Ex06FormFragment : Fragment() {
 
     private fun onCheckboxClicked(): List<String> {
         val listDemarcation = mutableListOf<String>()
-        if (binding.checkboxGoalie.isChecked) {
-            listDemarcation.add("Portero")
+        if (binding.optionGoalie.isChecked) {
+            listDemarcation.add(getString(R.string.goalie_player))
         }
-        if (binding.checkboxFender.isChecked) {
-            listDemarcation.add("Defensa")
+        if (binding.optionFender.isChecked) {
+            listDemarcation.add(getString(R.string.fender_player))
         }
-        if (binding.checkboxMidfielder.isChecked) {
-            listDemarcation.add("Medio Centro")
+        if (binding.optionMidfielder.isChecked) {
+            listDemarcation.add(getString(R.string.midfielder_player))
         }
-        if (binding.checkboxLeading.isChecked) {
-            listDemarcation.add("Delantero")
+        if (binding.optionLeading.isChecked) {
+            listDemarcation.add(getString(R.string.leading_player))
         }
         return listDemarcation
 

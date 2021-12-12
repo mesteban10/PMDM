@@ -13,7 +13,7 @@ class PlayerFileLocalSource(
 
     private val playerFile: File by lazy { getFile() }
 
-    override suspend fun findAll(): List<PlayerModel> = with(Dispatchers.IO) {
+    override suspend fun findAll(): List<PlayerModel> {
         val players: MutableList<PlayerModel> = mutableListOf()
         val fileLines = playerFile.readLines()
         fileLines.map { file ->

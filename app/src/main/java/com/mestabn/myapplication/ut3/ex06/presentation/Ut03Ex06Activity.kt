@@ -29,14 +29,14 @@ class Ut03Ex06Activity : AppCompatActivity() {
     }
 
 
-    fun setupView() {
+    private fun setupView() {
         setupViewBinding()
         setupToolbar()
         setupFragment()
 
     }
 
-    fun setupViewBinding() {
+    private fun setupViewBinding() {
         setContentView(binding.root)
     }
 
@@ -45,13 +45,13 @@ class Ut03Ex06Activity : AppCompatActivity() {
     }
 
     private fun setupFragment() {
-        updateToolbarTitle("Formulario")
-        addFragment(Ut03Ex06FormFragment.createInstance(), "1")
+        updateToolbarTitle(getString(R.string.form_title))
+        addFragment(Ut03Ex06FormFragment.createInstance())
     }
 
-    private fun addFragment(fragment: Fragment, tag: String) {
+    private fun addFragment(fragment: Fragment) {
         val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.add(binding.containerFragment.id, fragment, tag)
+        fragmentTransition.add(binding.containerFragment.id, fragment)
         fragmentTransition.commit()
     }
 
@@ -68,18 +68,18 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                if (supportActionBar?.title == "Formulario") {
+                if (supportActionBar?.title == getString(R.string.form_title)) {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
                     )
-                    updateToolbarTitle("Listado")
+                    updateToolbarTitle(getString(R.string.list_title))
                 } else {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06FormFragment.createInstance()
                     )
-                    updateToolbarTitle("Formulario")
+                    updateToolbarTitle(getString(R.string.list_title))
 
                 }
                 true

@@ -45,6 +45,7 @@
             tools:ignore="MissingConstraints"
             tools:text="@string/gender_person_form" />
 
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/first_demarcation_person"
             android:layout_width="wrap_content"
@@ -87,6 +88,7 @@
             app:layout_constraintTop_toBottomOf="@id/third_demarcation_person"
             tools:ignore="MissingConstraints"
             tools:text="Demarcation" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -18,9 +18,9 @@ class ListViewModel(private val getplayersUseCase: GetPlayerUseCase) : ViewModel
         MutableLiveData<List<PlayerListViewState>>()
     }
 
-    fun loadplayers() = viewModelScope.launch(Dispatchers.Main) {
+    fun loadplayers() = viewModelScope.launch(Dispatchers.IO) {
         val players = getplayersUseCase.execute()
-        _playersViewState.value = players.map {
+        _playersViewState.postValue(players.map {
             PlayerListViewState(
                 it.name,
                 it.surnames,
@@ -28,7 +28,7 @@ class ListViewModel(private val getplayersUseCase: GetPlayerUseCase) : ViewModel
                 it.gender,
                 it.demarcation,
             )
-        }
+        })
     }
 
 }

@@ -14,45 +14,45 @@
         android:padding="@dimen/padding_form">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/name_person_form"
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name_player_form"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/surname_person_form"
+            android:id="@+id/input_surname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/surname_player_form"
-            app:layout_constraintTop_toBottomOf="@id/name_person_form"
+            app:layout_constraintTop_toBottomOf="@id/input_name"
             tools:ignore="MissingConstraints" />
 
 
         <TextView
-            android:id="@+id/title_comunity_person"
+            android:id="@+id/label_community"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
             android:text="@string/community_player_form"
-            app:layout_constraintTop_toBottomOf="@id/surname_person_form"
+            app:layout_constraintTop_toBottomOf="@id/input_surname"
             tools:ignore="MissingConstraints" />
 
 
         <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/comunity_person_form"
+            android:id="@+id/list_community"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/communities_array"
-            app:layout_constraintTop_toBottomOf="@id/title_comunity_person" />
+            app:layout_constraintTop_toBottomOf="@id/label_community" />
 
         <TextView
-            android:id="@+id/gender_person_title"
+            android:id="@+id/label_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
             android:text="@string/gender_person_form"
-            app:layout_constraintTop_toBottomOf="@id/comunity_person_form"
+            app:layout_constraintTop_toBottomOf="@id/list_community"
             tools:ignore="MissingConstraints" />
 
         <RadioGroup
@@ -60,17 +60,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/gender_person_title"
+            app:layout_constraintTop_toBottomOf="@id/label_gender"
             tools:ignore="MissingConstraints">
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_woman"
+                android:id="@+id/option_woman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/woman_gender" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_man"
+                android:id="@+id/option_man"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_start"
@@ -78,7 +78,7 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/demarcation_person_title"
+            android:id="@+id/label_demarcation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
@@ -91,28 +91,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/demarcation_person_title">
+            app:layout_constraintTop_toBottomOf="@id/label_demarcation">
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_goalie"
+                android:id="@+id/option_goalie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/goalie_player" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_fender"
+                android:id="@+id/option_fender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fender_player" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_midfielder"
+                android:id="@+id/option_midfielder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/midfielder_player" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkbox_leading"
+                android:id="@+id/option_leading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/leading_player" />
@@ -125,7 +125,7 @@
             app:layout_constraintTop_toBottomOf="@id/demarcation_options">
 
             <Button
-                android:id="@+id/button_save"
+                android:id="@+id/action_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

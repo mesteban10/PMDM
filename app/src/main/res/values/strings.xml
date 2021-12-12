@@ -61,4 +61,8 @@
     <string name="midfielder_player">Medio Centro</string>
     <string name="fender_player">Defensa</string>
     <string name="goalie_player">Portero</string>
+    <string name="form_title">Formulario</string>
+    <string name="list_title">Lista de jugadores</string>
+    <string name="new_player_adder">Nuevo jugador añadido</string>
+    <string name="error_new_player">Error</string>
 </resources>
