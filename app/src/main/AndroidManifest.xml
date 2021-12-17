@@ -20,11 +20,6 @@
         <activity
             android:name=".ut3.alertExercise.presentation.listalerts.AlertActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ut3.UIActivity2"
@@ -34,7 +29,16 @@
             android:exported="true" />
         <activity
             android:name=".ut3.UiActivity"
-            android:exported="true" />
+            android:exported="true"/>
+        <activity
+            android:name=".ut3.ex06.presentation.Ut03Ex06Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

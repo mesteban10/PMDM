@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_form">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_name_player"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_surname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_surname_player"
+            app:layout_constraintTop_toBottomOf="@id/input_name"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/label_community"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/label_community_player"
+            app:layout_constraintTop_toBottomOf="@id/input_surname"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/list_community"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/communities_array"
+            app:layout_constraintTop_toBottomOf="@id/label_community" />
+
+        <TextView
+            android:id="@+id/label_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/label_gender"
+            app:layout_constraintTop_toBottomOf="@id/list_community"
+            tools:ignore="MissingConstraints" />
+
+        <RadioGroup
+            android:id="@+id/select_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/label_gender"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/option_woman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_woman" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/option_man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start"
+                android:text="@string/label_man" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/label_demarcation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/label_gender"
+            app:layout_constraintTop_toBottomOf="@id/select_gender"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/demarcation_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/label_demarcation">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_goalie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_goalie" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_fender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_fender" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_midfielder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_midfielder" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/option_leading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_leading" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/demarcation_options">
+
+            <Button
+                android:id="@+id/action_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/wmargin_top_button_save_form"
+                android:background="@color/secondaryColor"
+                android:paddingStart="@dimen/padding_button_save"
+                android:paddingEnd="@dimen/padding_button_save"
+                android:text="@string/label_button_save"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

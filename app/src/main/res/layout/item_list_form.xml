@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    app:cardCornerRadius="@dimen/corner_radious"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_card_view_form">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_data_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_card_view_form">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="27dp"
+            tools:text="@string/label_name_player" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/region_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_region" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gender_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/region_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_gender" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/first_demarcation_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/name_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_demarcation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/second_demarcation_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/region_person"
+            app:layout_constraintTop_toBottomOf="@id/first_demarcation_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_demarcation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/third_demarcation_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/region_person"
+            app:layout_constraintTop_toBottomOf="@id/second_demarcation_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_demarcation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fourth_demarcation_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_all_text_view_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/region_person"
+            app:layout_constraintTop_toBottomOf="@id/third_demarcation_person"
+            tools:ignore="MissingConstraints"
+            tools:text="@string/label_demarcation" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
