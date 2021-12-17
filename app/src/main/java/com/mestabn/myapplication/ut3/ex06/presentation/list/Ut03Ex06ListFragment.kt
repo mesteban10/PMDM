@@ -46,7 +46,7 @@ class Ut03Ex06ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupViewRecycler()
         setupViewStateObservers()
-        viewModelList.loadplayers()
+        viewModelList.loadPlayers()
     }
 
     private fun setupViewRecycler() {
