@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.mestabn.myapplication.R
@@ -51,35 +50,21 @@ class Ut03Ex06FormFragment : Fragment() {
 
     fun setupView() {
         binding.actionSave.setOnClickListener {
-          val newPlayer = viewModelForm.savePlayer(savePlayer())
+          viewModelForm.savePlayer(savePlayer())
             clearItems()
-            if (Result.success(newPlayer).isSuccess ){
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.new_player_adder),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }else{
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.error_new_player),
-                    Toast.LENGTH_SHORT).show()
-            }
-
-
 
         }
 
     }
-
-    private fun savePlayer(): List<SavePlayerUseCase.Param> {
+    private fun savePlayer(): SavePlayerUseCase.Param {
         val name = binding.inputName.text.toString()
         val surname = binding.inputSurname.text.toString()
         val region = binding.listCommunity.selectedItem.toString()
         val demarcation = onCheckboxClicked()
         val gender = onRadioButtomClicked()
-        return mutableListOf(SavePlayerUseCase.Param(name, surname, region, gender, demarcation))
+        return SavePlayerUseCase.Param(name, surname, region, gender, demarcation)
     }
+
 
 
     private fun clearItems() {
@@ -95,9 +80,9 @@ class Ut03Ex06FormFragment : Fragment() {
     private fun onRadioButtomClicked(): String {
         var gender: String = ""
         gender = if (binding.optionMan.isChecked) {
-           getString(R.string.man_gender)
+           getString(R.string.label_man)
         } else {
-            getString(R.string.woman_gender)
+            getString(R.string.label_woman)
         }
         return gender
     }
@@ -106,16 +91,16 @@ class Ut03Ex06FormFragment : Fragment() {
     private fun onCheckboxClicked(): List<String> {
         val listDemarcation = mutableListOf<String>()
         if (binding.optionGoalie.isChecked) {
-            listDemarcation.add(getString(R.string.goalie_player))
+            listDemarcation.add(getString(R.string.label_goalie))
         }
         if (binding.optionFender.isChecked) {
-            listDemarcation.add(getString(R.string.fender_player))
+            listDemarcation.add(getString(R.string.label_fender))
         }
         if (binding.optionMidfielder.isChecked) {
-            listDemarcation.add(getString(R.string.midfielder_player))
+            listDemarcation.add(getString(R.string.label_midfielder))
         }
         if (binding.optionLeading.isChecked) {
-            listDemarcation.add(getString(R.string.leading_player))
+            listDemarcation.add(getString(R.string.label_leading))
         }
         return listDemarcation
 

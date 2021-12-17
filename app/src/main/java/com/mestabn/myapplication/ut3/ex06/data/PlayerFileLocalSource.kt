@@ -3,7 +3,6 @@ package com.mestabn.myapplication.ut3.ex06.data
 import android.content.Context
 import com.mestabn.myapplication.commons.serializer.JsonSerializer
 import com.mestabn.myapplication.ut3.ex06.domain.PlayerModel
-import kotlinx.coroutines.Dispatchers
 import java.io.File
 
 class PlayerFileLocalSource(
@@ -24,15 +23,13 @@ class PlayerFileLocalSource(
     }
 
 
-    override fun save(players: List<PlayerModel>) {
-        players.map { customerModel ->
-            playerFile.appendText(
-                serializer.toJson(
-                    customerModel,
-                    PlayerModel::class.java
-                ) + System.lineSeparator()
-            )
-        }
+    override fun save(player: PlayerModel) {
+        playerFile.appendText(
+            serializer.toJson(
+                player,
+                PlayerModel::class.java
+            ) + System.lineSeparator()
+        )
     }
 
 
