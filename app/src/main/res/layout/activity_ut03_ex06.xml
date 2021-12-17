@@ -20,18 +20,6 @@
         android:layout_height="match_parent"
         tools:ignore="MissingConstraints">
 
-     <!--   <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/form"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />-->
-
     </FrameLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

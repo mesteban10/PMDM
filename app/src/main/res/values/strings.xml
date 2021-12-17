@@ -44,25 +44,25 @@
     <string name="title_text_description_alert">Recomendaciones de manejo</string>
     <string name="files_download">Ficheros Descargables</string>
     <string name="content_alert">Contenido del aviso</string>
-    <string name="name_person_form">Nombre</string>
-    <string name="region_person_form">Región</string>
-    <string name="gender_person_form">Gender</string>
 
     <!-- Formulario -->
-    <string name="clean_form_items"> </string>
+    <string name="label_region">Región</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_clean_items"> </string>
     <string name="clear">\" \"</string>
-    <string name="name_player_form">Nombre</string>
-    <string name="surname_player_form">Apellidos</string>
-    <string name="community_player_form">Comunity</string>
-    <string name="woman_gender">Mujer</string>
-    <string name="man_gender">Varón</string>
-    <string name="button_search">Guardar</string>
-    <string name="leading_player">Delantero</string>
-    <string name="midfielder_player">Medio Centro</string>
-    <string name="fender_player">Defensa</string>
-    <string name="goalie_player">Portero</string>
-    <string name="form_title">Formulario</string>
-    <string name="list_title">Lista de jugadores</string>
-    <string name="new_player_adder">Nuevo jugador añadido</string>
-    <string name="error_new_player">Error</string>
+    <string name="label_name_player">Nombre</string>
+    <string name="label_surname_player">Apellidos</string>
+    <string name="label_community_player">Comunity</string>
+    <string name="label_woman">Mujer</string>
+    <string name="label_man">Varón</string>
+    <string name="label_button_save">Guardar</string>
+    <string name="label_leading">Delantero</string>
+    <string name="label_midfielder">Medio Centro</string>
+    <string name="label_fender">Defensa</string>
+    <string name="label_goalie">Portero</string>
+    <string name="label_form_title">Formulario</string>
+    <string name="label_list_title">Lista de jugadores</string>
+    <string name="label_new_player">Nuevo jugador añadido</string>
+    <string name="label_error">Error</string>
+    <string name="label_demarcation">Demarcación</string>
 </resources>

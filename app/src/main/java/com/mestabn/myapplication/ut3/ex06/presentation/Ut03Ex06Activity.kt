@@ -45,7 +45,7 @@ class Ut03Ex06Activity : AppCompatActivity() {
     }
 
     private fun setupFragment() {
-        updateToolbarTitle(getString(R.string.form_title))
+        updateToolbarTitle(getString(R.string.label_form_title))
         addFragment(Ut03Ex06FormFragment.createInstance())
     }
 
@@ -68,18 +68,18 @@ class Ut03Ex06Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_change_fragment -> {
-                if (supportActionBar?.title == getString(R.string.form_title)) {
+                if (supportActionBar?.title == getString(R.string.label_form_title)) {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06ListFragment.createInstance()
                     )
-                    updateToolbarTitle(getString(R.string.list_title))
+                    updateToolbarTitle(getString(R.string.label_list_title))
                 } else {
                     replaceFragment(
                         binding.containerFragment.id,
                         Ut03Ex06FormFragment.createInstance()
                     )
-                    updateToolbarTitle(getString(R.string.list_title))
+                    updateToolbarTitle(getString(R.string.label_list_title))
 
                 }
                 true

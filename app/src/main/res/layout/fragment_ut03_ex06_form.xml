@@ -17,14 +17,14 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name_player_form"
+            android:hint="@string/label_name_player"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/input_surname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/surname_player_form"
+            android:hint="@string/label_surname_player"
             app:layout_constraintTop_toBottomOf="@id/input_name"
             tools:ignore="MissingConstraints" />
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
-            android:text="@string/community_player_form"
+            android:text="@string/label_community_player"
             app:layout_constraintTop_toBottomOf="@id/input_surname"
             tools:ignore="MissingConstraints" />
 
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
-            android:text="@string/gender_person_form"
+            android:text="@string/label_gender"
             app:layout_constraintTop_toBottomOf="@id/list_community"
             tools:ignore="MissingConstraints" />
 
@@ -67,14 +67,14 @@
                 android:id="@+id/option_woman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/woman_gender" />
+                android:text="@string/label_woman" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/option_man"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_start"
-                android:text="@string/man_gender" />
+                android:text="@string/label_man" />
         </RadioGroup>
 
         <TextView
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top"
-            android:text="@string/gender_person_form"
+            android:text="@string/label_gender"
             app:layout_constraintTop_toBottomOf="@id/select_gender"
             tools:ignore="MissingConstraints" />
 
@@ -97,25 +97,25 @@
                 android:id="@+id/option_goalie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/goalie_player" />
+                android:text="@string/label_goalie" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/option_fender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fender_player" />
+                android:text="@string/label_fender" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/option_midfielder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/midfielder_player" />
+                android:text="@string/label_midfielder" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/option_leading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/leading_player" />
+                android:text="@string/label_leading" />
         </LinearLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -133,7 +133,7 @@
                 android:background="@color/secondaryColor"
                 android:paddingStart="@dimen/padding_button_save"
                 android:paddingEnd="@dimen/padding_button_save"
-                android:text="@string/button_search"
+                android:text="@string/label_button_save"
                 android:textColor="@color/white" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
